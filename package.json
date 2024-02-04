@@ -1,6 +1,6 @@
 {
-	"name": "cours",
-	"version": "0.0.1",
+	"name": "hnu6054-site",
+	"version": "0.1.0",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
