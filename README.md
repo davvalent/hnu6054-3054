@@ -1,38 +1,33 @@
-# create-svelte
+# HNU 6054-3054
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Dépôt des sources du site web.
 
-## Creating a project
+Pour installation :
 
-If you're seeing this, you've probably already done this step. Congrats!
+- git clone
+- npm install
+- npm run dev -- --open
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+Pour build :
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- git checkout deploy
+- git rebase dev
+- npm run build
 
-## Developing
+# Notes techniques
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Voir NOTES.md
 
-```bash
-npm run dev
+Site statique basé sur Svelte, routing avec Svelte Kit et build avec Vite.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+Extensions : voir `svelte.config.js`
 
-## Building
+## Versionnement
 
-To create a production version of your app:
+Les contenus sont intégrés au site par le biais d'un sous-dépôt.
 
-```bash
-npm run build
-```
+### Branches
 
-You can preview the production build with `npm run preview`.
+- deploy : build seulement sur la branche deploy, car je ne veux pas commiter les builds sur les flows qui se retrouvent dans la branche main; push sur deploy déclenche le déploiement sur GH et sur ntnlv.ca
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+# Tree
