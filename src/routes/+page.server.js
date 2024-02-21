@@ -18,14 +18,7 @@ export const load = async () => {
     })
   );
 
-  // home page metedata (hpMetadata)
-  const siteMetaData = await import(`../lib/content/metadata.md`);
-	const { title, date, description } = siteMetaData.metadata;
-
   return {
-    title,
-    date,
-    description,
     seances
   };
 }
