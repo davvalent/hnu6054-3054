@@ -46,6 +46,8 @@ const config = {
               }],
               properties: {}
             });
+
+            // return false désactive le plugin
             return false;
           }
         }]
