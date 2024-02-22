@@ -19,6 +19,7 @@ export const load = async ({ url }) => { // voir https://kit.svelte.dev/docs/loa
 
   console.log("3 : ", pathName)
 
+// pour l'instant, 500 (404) si la route ne matche pas avec un fichier md dans content 
 switch (pathName) {
      case root:
        metaData = await import(`$lib/content/pages/${pathName}.md`);

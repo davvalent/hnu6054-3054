@@ -23,7 +23,7 @@ function setAriaCurrent(nl) {
   // set aria-current attribute
   for (const navigationListItem of nl.children) {
     if (navigationListItem.id === document.location.pathname) {
-      if (navigationListItem.children[0].ariaCurrent = "page") {
+      if (navigationListItem.children[0].ariaCurrent == "page") {
         continue;
       } else {
         navigationListItem.children[0].ariaCurrent = "page";
