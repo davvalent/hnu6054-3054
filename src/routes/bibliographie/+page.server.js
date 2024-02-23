@@ -1,27 +1,24 @@
+import {
+  ZOTERO_API,
+  ZOTERO_GROUP,
+  ZOTERO_STYLE_URL
+} from '$env/static/private';
+
 export const load = async () => {
 
 /**
  * @todo voir si citeproc.js serait possible, pour éviter les requêtes sur le réseau
  */
 
-/**
-https://api.zotero.org/groups/3868811/collections/I3ZERLVA/items/top?format=bib&linkwrap=1&style=https://ntnlv.ca/csl/enseignement-df-auteur-date-simple-web.csl&locale=fr-CA
-*/
+const zoteroApi = ZOTERO_API + ZOTERO_GROUP + "/collections/",
+  response = await fetch( zoteroApi, { method: "GET" }),
+  collections = await response.json();
 
-// fetching collections
-const response = await fetch(
-  "https://api.zotero.org/groups/3868811/collections/", {
-    method: "GET"
-  }
-),
-
-collections = await response.json(),
-
-collectionsPlusFormattedReferences = await (async () => {
+const collectionsPlusFormattedReferences = await (async () => {
 
   return Promise.all(collections.map(async (collection) => {
 
-    return fetch(`https://api.zotero.org/groups/3868811/collections/${collection.key}/items/top?format=bib&linkwrap=1&style=https://www.zotero.org/styles/universite-du-quebec-a-montreal?source=1&locale=fr-CA`, {
+    return fetch(zoteroApi + collection.key + "/items/top?format=bib&linkwrap=1&style=" + ZOTERO_STYLE_URL, {
       method: "GET",
       headers: new Headers({
         "content-type": "application/xhtml+xml"
