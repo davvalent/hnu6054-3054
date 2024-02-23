@@ -13,3 +13,4 @@ vite.config.ts.timestamp-*
 /NOTES.md
 /static/fonts/*
 /static/presentations/*
+/src/routes/@test/*
