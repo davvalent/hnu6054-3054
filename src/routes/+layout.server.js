@@ -1,6 +1,7 @@
 export const load = async ({ url }) => { // voir https://kit.svelte.dev/docs/load#universal-vs-server-input
 
-  console.log(url.pathname);
+  console.log("\x1b[33m%s\x1b[0m", "/* LOADING */")
+  console.log("PATHNAME: ", url.pathname);
 
   let metaData;
 
@@ -10,28 +11,34 @@ export const load = async ({ url }) => { // voir https://kit.svelte.dev/docs/loa
   const root = (/^[a-z0-9-]+$/.test(pathName))
     ? pathName
     : wontMatch;
-  console.log("1 : ", root)
+  console.log("ROOT: ", root)
 
   const seances = (/^s\/.+$/.test(pathName))
     ? pathName
     : wontMatch;
-  console.log("2 : ", seances)
+  console.log("SÉANCE: ", seances)
 
-  console.log("3 : ", pathName)
+  console.log("FINALLY: ", pathName)
 
-// pour l'instant, 500 (404) si la route ne matche pas avec un fichier md dans content 
-switch (pathName) {
-     case root:
-       metaData = await import(`$lib/content/pages/${pathName}.md`);
-       break;
-    case seances:
-      pathName = pathName.match(/s\/(.+)/)[1];
-      metaData = await import(`$lib/content/seances/${pathName}.md`);
-      break;
-    default:
-      metaData = await import(`$lib/content/metadata.md`);
+  try {
+    switch (pathName) {
+      case root:
+        metaData = await import(`$lib/content/pages/${pathName}.md`);
+        break;
+      case seances:
+        pathName = pathName.match(/s\/(.+)/)[1];
+        metaData = await import(`$lib/content/seances/${pathName}.md`);
+        break;
+      case "":
+      default:  
+        metaData = await import(`$lib/content/metadata.md`);
+    }
+  } catch (error) {
+    // handling errors here leads to 404 which is what we want
+    console.error(error);
+    metaData = await import(`$lib/content/metadata.md`);
   }
-    
+
   const { title, date, author, description } = metaData.metadata;
   
   return {
