@@ -1,3 +1,8 @@
+/**
+ * +layout.server.js
+ * gestion des URL
+ */
+
 export const load = async ({ url }) => { // voir https://kit.svelte.dev/docs/load#universal-vs-server-input
 
   console.log("\x1b[33m%s\x1b[0m", "/* LOADING */")

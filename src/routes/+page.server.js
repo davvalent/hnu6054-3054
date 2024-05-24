@@ -1,3 +1,8 @@
+/**
+ * +page.server.js
+ * données des séances à afficher sur la page d'accueil
+ */
+
 export const load = async () => {
 
   let files = import.meta.glob('../lib/content/seances/*.md');
