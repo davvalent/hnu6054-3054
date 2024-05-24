@@ -4,7 +4,7 @@
 }
 
 body {
-	font: 1.2rem/1.5 Atkinson,-apple-system,BlinkMacSystemFont,"avenir next",avenir,helvetica,"helvetica neue",ubuntu,roboto,noto,"segoe ui",arial,sans-serif;
+	font: 1.3rem/1.5 Atkinson,-apple-system,BlinkMacSystemFont,"avenir next",avenir,helvetica,"helvetica neue",ubuntu,roboto,noto,"segoe ui",arial,sans-serif;
 }
 strong, b {
 	font-family: "Atkinson Bold";
@@ -42,6 +42,17 @@ h1 {
 
 h2 {
 	font-size: 1.65em;
+	position: relative;
+	padding-bottom: 0.5rem;
+}
+h2::after {
+	background-color: #00286d;
+	content: "";
+	width: 70px;
+	height: 4px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }
 
 a, body {
@@ -67,14 +78,12 @@ a, body {
 	margin-left: 1rem;
 }
 
-code,pre {
-	background-color: #00286d;
-	color: #fff;
+code, pre {
+	background-color: #ededf4;
+	color: #bd4147;
 	font-family: San Francisco Mono,Monaco,"Consolas","Lucida Console","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-	font-size: normal;
-	border: 1px solid #00286d;
-	font-size: 0.9em;
-	border-radius: 5px;
+	font-size: 1.16rem;
+	border-radius: 0.25rem;
 }
 
 h3 > code {
@@ -83,7 +92,7 @@ h3 > code {
 }
 
 code {
-	padding: .1rem;
+	padding: 0.25rem;
 	border: none;
 }
 
