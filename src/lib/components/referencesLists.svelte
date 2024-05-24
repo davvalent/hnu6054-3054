@@ -5,6 +5,6 @@ export let collections;
 </script>
 
 {#each collections.collections as collection}
-  <h1>{collection.data.name}</h1>
+  <h2>{collection.data.name}</h2>
   {@html collection.formattedData}
 {/each}
