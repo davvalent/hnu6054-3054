@@ -1,0 +1,14 @@
+/* voir https://github.com/ecomfe/fontmin/issues/83 */
+@font-face {
+  font-family:"Atkinson";
+  src:
+    local("Atkinson"),
+    url("/fonts/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2"),
+}
+
+@font-face {
+  font-family:"Atkinson Bold";
+  src:
+    local("Atkinson Bold"),
+    url("/fonts/Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2"),
+}
