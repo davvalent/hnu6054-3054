@@ -1,4 +1,5 @@
 <script>
+  import { base } from '$app/paths';
 	export let data;
 </script>
 
@@ -7,8 +8,9 @@
 
 <p>Ouvrir en grand</p>
 
+<!-- iframe dans un if -->
 <iframe
-  src={data.presentation}
+  src={base}{data.presentation}
   loading="eager"
   referrerpolicy="no-referrer"
   allowfullscreen="allowfullscreen"

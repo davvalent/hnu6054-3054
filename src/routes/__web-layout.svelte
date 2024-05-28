@@ -2,13 +2,16 @@
 
 import {
 	onMount,
-	afterUpdate
+	afterUpdate,
 } from 'svelte';
+
+import { base } from '$app/paths';
 
 import "$lib/css/fonts.css";
 import "$lib/css/style.css";
 
 export let layoutData;
+
 let navigationList;
 
 const dateTimeEdited = Date();
@@ -22,18 +25,18 @@ console.log(
   document.location
 );
 
-// set aria-current attribute
-for (const navigationListItem of nl.children) {
-  if (navigationListItem.id === document.location.pathname) {
-    if (navigationListItem.children[0].ariaCurrent == "page") {
-      continue;
+  // set aria-current attribute
+  for (const navigationListItem of nl.children) {
+    if (navigationListItem.id === document.location.pathname) {
+      if (navigationListItem.children[0].ariaCurrent == "page") {
+        continue;
+      } else {
+        navigationListItem.children[0].ariaCurrent = "page";
+      };
     } else {
-      navigationListItem.children[0].ariaCurrent = "page";
+      navigationListItem.children[0].ariaCurrent = "";
     };
-  } else {
-    navigationListItem.children[0].ariaCurrent = "";
   };
-};
 };
 
 onMount(() => console.log("Web layout mounted"));
@@ -43,6 +46,10 @@ afterUpdate (() => {
   console.log("DOM updated");
 });
 
+function foobar() {
+  console.log('LIEN CLIKÉ');
+  window.location.href = '?print'
+}
 </script>
 
 <!-- HEADER -->
@@ -50,16 +57,16 @@ afterUpdate (() => {
   <nav>
     <ul bind:this={navigationList}>
 
-      <li id="/plan-de-cours">
-        <a href="/plan-de-cours/">Plan de cours</a>
+      <li id="{base}/plan-de-cours">
+        <a href="{base}/plan-de-cours/">Plan de cours</a>
       </li>
 
-      <li id="/">
-        <a href="/" aria-current="page">HNU6054 Web sémantique et données</a>
+      <li id="{base}/">
+        <a href="{base}/" aria-current="page">HNU6054 Web sémantique et données</a>
       </li>
 
-      <li id="/bibliographie">
-        <a href="/bibliographie/">Bibliographie</a>
+      <li id="{base}/bibliographie">
+        <a href="{base}/bibliographie/">Bibliographie</a>
       </li>
 
     </ul>
@@ -68,7 +75,7 @@ afterUpdate (() => {
 
 <main>
 
-{#if layoutData.path != "/"}
+{#if layoutData.path != `${base}/`}
 
   <h1>{layoutData.title}</h1>
 
@@ -79,7 +86,7 @@ afterUpdate (() => {
 
   {#if layoutData.print}
   <p>
-    <a href="?print">Version imprimable</a> 
+    <a href="?print" on:click={foobar}>Version imprimable</a> 
   </p>
   {/if}
 

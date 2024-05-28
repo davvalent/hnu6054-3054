@@ -1,9 +1,16 @@
 <script>
-  export let layoutData;
+
+import { onMount } from 'svelte';
+import { base } from '$app/paths';
+
+export let layoutData;
+  
+onMount(() => console.log("Print layout mounted"));
+
 </script>
 
 <svelte:head>
-  <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+  <script src="{base}/paged.polyfill.min.js"></script>
 </svelte:head>
 
 <header>

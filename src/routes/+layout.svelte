@@ -5,17 +5,25 @@
 
 <script>
 
-// ordre d'import important pour l'application des styles CSS
-import WebLayout from './__web-layout.svelte';
+import {
+	onMount,
+} from 'svelte';
+
 import PrintLayout from './__print-layout.svelte';
+import WebLayout from './__web-layout.svelte';
 
 export let data;
 
 let LayoutComponent;
-  
-$: LayoutComponent = (data.layout === "print") ? PrintLayout : WebLayout;
+let printLayout;
+$: LayoutComponent = (printLayout) ? PrintLayout : WebLayout;
 
-console.log("LAYOUT :", data.layout);
+onMount(() => {
+  console.log('MAIN LAYOUT MOUNTED');
+  const params = new URLSearchParams(window.location.search);
+  console.log('has print params:', params.has('print'));
+  printLayout = params.has('print');
+})
 
 </script>
 

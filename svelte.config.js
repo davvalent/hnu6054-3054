@@ -1,20 +1,35 @@
 import adapter from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
-import toc from '@jsdevtools/rehype-toc';
-import rehypeSlug from 'rehype-slug';
+
+const dev = process.env.NODE_ENV === 'development';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 
   kit: {
-
+    paths: {
+      base: dev ? '' : '/~david/hnu6054-svelte',
+      relative: false
+    },
     adapter: adapter({
       pages: 'build',
       assets: 'build',
       fallback:  undefined,
       precompress: false,
       strict: true
-		})
+		}),
+    prerender: {
+      handleHttpError: 'fail',
+      entries: [
+        '/s/2024-06-10',
+        '/s/2024-06-12',
+        '/s/2024-06-14',
+        '/s/2024-06-20',
+        '/',
+        '/bibliographie',
+        '/plan-de-cours'
+      ]
+    }
 	},
 
   // extensions property tells Svelte what types of files to treat as components
@@ -22,37 +37,7 @@ const config = {
 
   preprocess: [
     mdsvex({
-
       extensions: ['.md', '.svx'],
-
-// rehype start
-      rehypePlugins: [
-        [rehypeSlug],
-        [toc, {
-          headings: ["h2", "h3"],
-          cssClasses: {
-            toc: "page-outline", 
-            link: "page-link",
-          },
-          position: "afterbegin",
-          customizeTOC: toc => {
-
-            toc.children.splice(0, 0, {
-              type: "element",
-              tagName: "strong",
-              children: [{ 
-                type: 'text',
-                value: 'Table des matières'
-              }],
-              properties: {}
-            });
-
-            // return false désactive le plugin
-            return false;
-          }
-        }]
-      ]
-// rehype end
     })
   ]
 };

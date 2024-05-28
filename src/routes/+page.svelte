@@ -2,11 +2,6 @@
 
 <script>
   export let data;
-  // console.log(data.seances);
-
-  let displayedSeance = 0;
-  // $: next = displayedSeance;
-
 </script>
 
 <h1>Séances</h1>
