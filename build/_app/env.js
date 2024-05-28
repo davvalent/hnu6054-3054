@@ -1,1 +1,0 @@
-export const env={"PUBLIC_BASE_URL":"https://zotero.org"}
