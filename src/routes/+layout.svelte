@@ -1,153 +1,31 @@
 <!--
-  layout de plus haut niveau
-  sur toutes les pages
+  charge dynamiquement le layout web ou print
+  en fonction de la présence du paramètre d'URL ?print
 -->
 
 <script>
 
-import {
-		onMount,
-		afterUpdate
-	} from 'svelte';
-
-import "$lib/css/fonts.css";
-import "$lib/css/style.css";
+// ordre d'import important pour l'application des styles CSS
+import WebLayout from './__web-layout.svelte';
+import PrintLayout from './__print-layout.svelte';
 
 export let data;
 
-let navigationList;
-const dateTimeEdited = Date();
-let dateTimeGenerated = Date();
+let LayoutComponent;
+  
+$: LayoutComponent = (data.layout === "print") ? PrintLayout : WebLayout;
 
-function setAriaCurrent(nl) {
-
-  console.log(
-    "Dev Informations\n",
-    nl, "\n",
-    document.location
-  );
-
-  // set aria-current attribute
-  for (const navigationListItem of nl.children) {
-    if (navigationListItem.id === document.location.pathname) {
-      if (navigationListItem.children[0].ariaCurrent == "page") {
-        continue;
-      } else {
-        navigationListItem.children[0].ariaCurrent = "page";
-      };
-    } else {
-      navigationListItem.children[0].ariaCurrent = "";
-    };
-  };
-};
-
-onMount(() => console.log("Main layout mounted"));
-
-afterUpdate (() => {
-    setAriaCurrent(navigationList);
-    console.log("DOM updated");
-  });
+console.log("LAYOUT :", data.layout);
 
 </script>
 
 <svelte:head>
   <meta name="author" content="{data.author}" />
-  <meta name="title" content="{data.title}" />
+  <meta name="title" content="{data.siteTitle}" />
 </svelte:head>
 
-<!-- HEADER -->
-<header>
-  <nav>
-    <ul bind:this={navigationList}>
-
-      <li id="/plan-de-cours">
-        <a href="/plan-de-cours/">Plan de cours</a>
-      </li>
-
-      <li id="/">
-        <a href="/" aria-current="page">HNU6054 Web sémantique et données</a>
-      </li>
-
-      <li id="/bibliographie">
-        <a href="/bibliographie/">Bibliographie</a>
-      </li>
-
-    </ul>
-  </nav>
-</header>
-
-<main>
-
-{#if data.path != "/"}
-
-  <h1>{data.title}</h1>
-
-  {#if data.date}
-  <p>Page éditée le {dateTimeEdited}</p>
-  <p>Page générée le {dateTimeGenerated}</p>
-  {/if}
-
-
-{/if}
-
-{#if data.description}
-  <section class="description">
-    <p>{data.description}</p>
-  </section>
-{/if}
-
+<svelte:component
+  this = {LayoutComponent}
+  layoutData = {data}>
   <slot />
-
-</main>
-
-<!-- FOOTER -->
-<footer>
-  <p>À propos</p>
-  <p><a href="https://mas.to/tags/hnu6054/">#hnu6054@mas.to</a></p>
-  <p>{new Date()}</p>
-</footer>
-
-<style>
-
-header {
-  border-bottom: solid 2px;
-}
-
-header, footer {
-	margin: 0 3rem 0 3rem;
-}
-
-header li/*, footer li*/ {
-  display: inline;
-  text-transform: uppercase;
-}
-
-header a {
-    text-decoration: none;
-    padding: 0.5em;
-    border: 2px solid transparent;
-}
-
-header ul/*, footer ul*/ {
-    justify-content: space-between;
-    display: flex;
-}
-
-[aria-current="page"] {
-	/* font-weight: bold; */
-	border: 2px solid;
-}
-
-section.description {
-	margin-top: 2rem;
-}
-
-section.description p {
-  margin: 0.5rem 0 0.5rem 0;
-}
-
-footer {
-  border-top: solid 2px;
-}
-
-</style>
+</svelte:component>

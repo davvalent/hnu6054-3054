@@ -8,7 +8,9 @@ export const load = async ({ url }) => { // voir https://kit.svelte.dev/docs/loa
   console.log("\x1b[33m%s\x1b[0m", "/* LOADING */")
   console.log("PATHNAME: ", url.pathname);
 
-  let metaData;
+  console.log(url.searchParams.has("print"));
+
+  let metaData, siteMetaData;
 
   let pathName = url.pathname.slice(1);
   const wontMatch = "wontMatch";
@@ -44,13 +46,19 @@ export const load = async ({ url }) => { // voir https://kit.svelte.dev/docs/loa
     metaData = await import(`$lib/content/metadata.md`);
   }
 
-  const { title, date, author, description } = metaData.metadata;
+  siteMetaData = await import(`$lib/content/site-metadata.md`);
+
+  const { title, date, author, description, print } = metaData.metadata;
+  const { siteTitle } = siteMetaData.metadata;
   
   return {
     title,
+    siteTitle,
     author,
     date,
     description,
-    path: url.pathname
+    print,
+    path: url.pathname,
+    layout: (url.searchParams.has("print")) ? "print" : "web"
   };
 };
