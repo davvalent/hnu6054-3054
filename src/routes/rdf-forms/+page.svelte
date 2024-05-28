@@ -1,24 +1,16 @@
 <script>
-    import { onDestroy, onMount } from "svelte"; 
-    let editor;
-    let monaco;
-    let editorContainer;
-    let theForm;
-    const code = `@prefix bot: <https://w3id.org/bot#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix display: <https://ouvroir.umontreal.ca/onto/display#> .
-@prefix exhib: <https://ouvroir.umontreal.ca/data/exhib#> .
-exhib:space0000 rdfs:label "Préambule"@fr ;
-  bot:adjacentZone exhib:space0001 ;
-  display:hasExhibit exhib:exhibit0001 ,
-    exhib:exhibit0002 ,
-    exhib:exhibit0003 ,
-    exhib:exhibit0004 ;
-  bot:adjacentElement exhib:element0004 ,
-    exhib:element0005 ,
-    exhib:element0006 ,
-    exhib:element0007 .`;
+    import { onDestroy, onMount } from "svelte";
+    import "$lib/css/picnic.min.css";
+
+    export let data;
+
+  let editor,
+    monaco,
+    editorContainer,
+    rdfForm,
+    inputForm;
+
+ const code = data.code;
 
     onMount(async () => {
 
@@ -29,9 +21,10 @@ exhib:space0000 rdfs:label "Préambule"@fr ;
         editor.setModel(model);
 
         // récupérer les données de monaco lors de la création des données du formulaire
-        theForm.addEventListener("formdata", event => {
-            event.formData.append('content', editor.getModel().getValue());
-            console.log(editor.getModel().getValue());
+        rdfForm.addEventListener("formdata", event => {
+            const graph = editor.getModel().getValue();
+            event.formData.append('content', graph);
+            console.log(graph);
         });
     });
 
@@ -43,19 +36,44 @@ exhib:space0000 rdfs:label "Préambule"@fr ;
     // contenu MD
     import RdfForms from "$lib/content/pages/rdf-forms.md";
 
-    // output de load()dans server
-    // export let data;
 </script>
 
 <h2>Formulaire RDF</h2>
 
-<form method="POST" id="MyForm" bind:this={theForm}>
+<h3>Editor</h3>
+
+<p>1) Parse TTL. 2) Serialize => JSON-LD</p>
+
+<form method="POST" id="rdf-form" bind:this={rdfForm}>
     <!-- voir pour validation syntaxique -->
     <div class="form-group">
         <label for="container">Formulaire d’inférence -- top cool</label>
         <div class="container" name="monaco" bind:this={editorContainer} />
     </div>
     <button class="btn btn-primary">Submit</button>
+</form>
+
+<h3>Inputs avec inférence</h3>
+
+<p>Saisir un triplet. Insérer dans l'entrepôt. Effectuer une requête avec la clause <code>DESCRIBE</code>. Observer les inférences.</p>
+
+<form  method="POST" id="input-form" bind:this={inputForm}>
+
+  <div>
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" required />
+  </div>
+
+  <div>
+      <label for="predicate">Predicate</label>
+      <input type="text" id="subject" name="predicate" required />
+  </div>
+
+  <div>
+      <label for="object">Object</label>
+      <input type="text" id="object" name="predicate" required />
+  </div>
+  <button class="btn btn-primary">Submit</button>
 </form>
 
 <!-- Markdown -->

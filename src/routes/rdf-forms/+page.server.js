@@ -1,3 +1,5 @@
+import { DEFAULT_TTL_CODE } from "$env/static/private";
+
 import {
   graph,
   parse,
@@ -5,13 +7,12 @@ import {
 } from "rdflib";
 
 export const load = async () => {
-  return { foo: "Foo Bar" };
+  return { code: DEFAULT_TTL_CODE };
 }
 
 
 export const actions = { // récupère automatiquement les données du formulaire
-  default: async ({ request }) => {
-
+  default: async ({ request }) => { // request interface
 
     // données du formulaire
     const submitedData = await request.formData();
@@ -28,7 +29,7 @@ export const actions = { // récupère automatiquement les données du formulair
     // doc dit premier argument c'est un graph à sérialiser
     // mais avec null change rien
     const serialized = await serialize(null, store, baseURI, 'application/ld+json');
-    console.log("===============================================================\n", serialized);
+    console.log("=================================\n", serialized);
 
   }
 };

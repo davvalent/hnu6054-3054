@@ -3,9 +3,15 @@ title: RDF-forms
 author: David Valentine
 published_date: 2024-02-21
 tags: []
-description: "Expérimentations dans Svelte avec un formulaire simple et la librairie JS rdflib.js."
+description: "Expérimentations dans Svelte avec un formulaire web simple et la librairie JS rdflib.js."
 printable: false
 ---
+## rdflib.js : documentation
+
+- https://github.com/linkeddata/rdflib.js/
+- https://linkeddata.github.io/rdflib.js/Documentation/
+- https://linkeddata.github.io/rdflib.js/doc/
+
 ## Remarques
 
 ### RDF-forms
@@ -18,8 +24,3 @@ Autres ressorces pour Monaco:
 - https://github.com/sonyarianto/sveltekit-monaco-editor/blob/main/src/routes/%2Bpage.svelte
 - pour faire un formulaire: https://www.meziantou.net/using-monaco-editor-as-an-input-in-a-form.htm
 
-### rdflib.js doc
-
-- https://github.com/linkeddata/rdflib.js/
-- https://linkeddata.github.io/rdflib.js/Documentation/
-- https://linkeddata.github.io/rdflib.js/doc/
