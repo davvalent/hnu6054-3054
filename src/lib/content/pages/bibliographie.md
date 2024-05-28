@@ -3,7 +3,8 @@ title: Bibliographie
 author: David Valentine
 published_date: 2024-02-28
 tags: []
-description: "Bibliogrphie du cours HNU6054"
+description: |
+  Bibliographie et ressources utiles concernant le web sémantique dans le cadre du cours HNU6054.
 ---
 ## Plan
 

@@ -1,18 +1,21 @@
 ---
 title: Plan de cours
 author: David Valentine
-published_date: 2024-02-28
-tags: []
-description: "Plan de cours HNU6054"
+date_published: 2024-05-24
+tags: [hnu6054, hnu3054]
+description: |
+  Humanités numériques : Web sémantique et données. Atelier sur les principes du Web sémantique et des données ouvertes liées.
+date: false
+print: true
 ---
 ## Informations pratiques
 
 - Cours optionnel, 1 crédit
 - Horaire :
-  - mardi 23 mai 9h30 à 11h30, 12h30 à 15h30
-  - mercredi 24 mai 9h30 à 11h30, 12h30 à 15h30
-  - vendredi 26 mai 9h30 à 11h30, 12h30 à 15h30
-- Salle : C-2043, Pavillon Lionel-Groulx, UdeM
+  - lundi 10 juin : 9h30 à 11h30 | 12h30 à 15h30
+  - mercredi 12 juin : 9h30 à 11h30 | 12h30 à 15h30
+  - vendredi 14 juin : 9h30 à 11h30 | 12h30 à 15h30
+- Salle : C-3115, Pavillon Lionel-Groulx, UdeM
 - Enseignant : David Valentine
 - Disponibilités : sur rendez-vous
 - Courriel : david.valentine@umontreal.ca
