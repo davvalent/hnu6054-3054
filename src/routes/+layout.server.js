@@ -3,24 +3,27 @@
  * gestion des URL
  */
 
+import { base } from '$app/paths';
+
 export const load = async ({ url }) => { // voir https://kit.svelte.dev/docs/load#universal-vs-server-input
 
   console.log("\x1b[33m%s\x1b[0m", "/* LOADING */")
   console.log("PATHNAME: ", url.pathname);
 
-  console.log(url.searchParams.has("print"));
-
   let metaData, siteMetaData;
 
-  let pathName = url.pathname.slice(1);
+  let pathName = url.pathname;
   const wontMatch = "wontMatch";
 
-  const root = (/^[a-z0-9-]+$/.test(pathName))
+  const reRoot = new RegExp(`^${base}\/([a-z0-9-]+)\/$`);
+  const reSeances = new RegExp(`^${base}\/s\/(.+)\/$`);
+
+  const root = (reRoot.test(pathName))
     ? pathName
     : wontMatch;
   console.log("ROOT: ", root)
 
-  const seances = (/^s\/.+$/.test(pathName))
+  const seances = (reSeances.test(pathName))
     ? pathName
     : wontMatch;
   console.log("SÉANCE: ", seances)
@@ -30,13 +33,14 @@ export const load = async ({ url }) => { // voir https://kit.svelte.dev/docs/loa
   try {
     switch (pathName) {
       case root:
+        pathName = pathName.match(reRoot)[1];
         metaData = await import(`$lib/content/pages/${pathName}.md`);
         break;
       case seances:
-        pathName = pathName.match(/s\/(.+)/)[1];
+        pathName = pathName.match(reSeances)[1];
         metaData = await import(`$lib/content/seances/${pathName}.md`);
         break;
-      case "":
+      case base:
       default:  
         metaData = await import(`$lib/content/metadata.md`);
     }
@@ -59,6 +63,5 @@ export const load = async ({ url }) => { // voir https://kit.svelte.dev/docs/loa
     description,
     print,
     path: url.pathname,
-    layout: (url.searchParams.has("print")) ? "print" : "web"
   };
 };
