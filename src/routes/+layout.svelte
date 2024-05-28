@@ -1,3 +1,8 @@
+<!--
+  layout de plus haut niveau
+  sur toutes les pages
+-->
+
 <script>
 
 import {
@@ -11,6 +16,8 @@ import "$lib/css/style.css";
 export let data;
 
 let navigationList;
+const dateTimeEdited = Date();
+let dateTimeGenerated = Date();
 
 function setAriaCurrent(nl) {
 
@@ -48,6 +55,7 @@ afterUpdate (() => {
   <meta name="title" content="{data.title}" />
 </svelte:head>
 
+<!-- HEADER -->
 <header>
   <nav>
     <ul bind:this={navigationList}>
@@ -71,10 +79,16 @@ afterUpdate (() => {
 <main>
 
 {#if data.path != "/"}
-  <h1>{data.title}</h1>
-  <p>Version imprimable</p>
-{/if}
 
+  <h1>{data.title}</h1>
+
+  {#if data.date}
+  <p>Page éditée le {dateTimeEdited}</p>
+  <p>Page générée le {dateTimeGenerated}</p>
+  {/if}
+
+
+{/if}
 
 {#if data.description}
   <section class="description">
@@ -86,8 +100,11 @@ afterUpdate (() => {
 
 </main>
 
+<!-- FOOTER -->
 <footer>
-  <p>Pied de page</p>
+  <p>À propos</p>
+  <p><a href="https://mas.to/tags/hnu6054/">#hnu6054@mas.to</a></p>
+  <p>{new Date()}</p>
 </footer>
 
 <style>
@@ -126,7 +143,7 @@ section.description {
 }
 
 section.description p {
-  margin: 0;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 footer {
