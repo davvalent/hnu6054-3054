@@ -9,8 +9,8 @@ import {
 	onMount,
 } from 'svelte';
 
-import PrintLayout from './__print-layout.svelte';
-import WebLayout from './__web-layout.svelte';
+import PrintLayout from '$lib/components/_print-layout.svelte';
+import WebLayout from '$lib/components/_web-layout.svelte';
 
 export let data;
 
