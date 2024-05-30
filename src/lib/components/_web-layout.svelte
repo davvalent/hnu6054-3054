@@ -104,7 +104,7 @@ function foobar() {
 
 <!-- FOOTER -->
 <footer>
-  <p>À propos</p>
+  <p><a href="{base}/a-propos">À propos</p>
   <p><a href="https://mas.to/tags/hnu6054/">#hnu6054@mas.to</a></p>
   <p>{new Date()}</p>
 </footer>
