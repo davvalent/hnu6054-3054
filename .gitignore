@@ -11,6 +11,9 @@ vite.config.ts.timestamp-*
 # custom
 
 /NOTES.md
+/static/documents/*
+/static/exercices/*
 /static/fonts/*
 /static/presentations/*
+/static/presentation-qdmtl/*
 /src/routes/@test/*

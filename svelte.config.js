@@ -21,10 +21,6 @@ const config = {
     prerender: {
       handleHttpError: 'fail',
       entries: [
-        '/s/2024-06-10',
-        '/s/2024-06-12',
-        '/s/2024-06-14',
-        '/s/2024-06-20',
         '/',
         '/bibliographie',
         '/plan-de-cours'

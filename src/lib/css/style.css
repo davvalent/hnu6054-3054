@@ -347,4 +347,9 @@ summary {
 		height: 2px;
 		margin: 2em auto;
 	}
+	code {
+		font-size: inherit;
+		color: inherit;
+		padding: 0.15rem;
+	}
 }

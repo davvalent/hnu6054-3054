@@ -14,11 +14,12 @@ onMount(() => console.log("Print layout mounted"));
 </svelte:head>
 
 <header>
-  <h1>{layoutData.siteTitle}</h1>
+  <h1>HNU6054 Humanités numériques : Web sémantique et données</h1>
 </header>
 
 <main>
 
+  <h1>{layoutData.title}</h1>
   {#if layoutData.description}
     <section class="description">
       <p>{layoutData.description}</p>
@@ -48,8 +49,8 @@ onMount(() => console.log("Print layout mounted"));
 
    @page {
     size: letter;
-    margin-left: 1.8cm;
-    margin-right: 1.8cm;
+    margin-left: 2cm;
+    margin-right: 2cm;
     margin-top: 3cm;
     margin-bottom: 3cm;
     @bottom-left {
