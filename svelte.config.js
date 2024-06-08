@@ -1,14 +1,14 @@
 import adapter from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
 
-// const dev = process.env.NODE_ENV === 'development';
+const dev = process.env.NODE_ENV === 'development';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 
   kit: {
     paths: {
-      base: '',
+      base: dev ? '' : '/hnu6054-3054',
       relative: false
     },
     adapter: adapter({
