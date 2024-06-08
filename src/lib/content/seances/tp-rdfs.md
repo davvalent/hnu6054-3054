@@ -13,7 +13,11 @@ seance: 2
 order: 1
 ---
 
-Téléchargez (clic droit puis "Enregistrer la cible du lien sous" ou équivalent) le fichier suivant [exercices/CBWC-RDF-S.ttl](/exercices/CBWC-RDF-S.ttl).
+<script>
+import { base } from '$app/paths';
+</script>
+
+Téléchargez (clic droit puis "Enregistrer la cible du lien sous" ou équivalent) le fichier suivant [exercices/CBWC-RDF-S.ttl]({base}/exercices/CBWC-RDF-S.ttl).
 
 Modifier le fichier localement avec un éditeur de texte pour y ajouter les informations du tableau suivant associées à des vins qui sont déjà dans le fichier, mais sans autre information.
 
