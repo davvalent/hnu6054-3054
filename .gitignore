@@ -12,6 +12,7 @@ vite.config.ts.timestamp-*
 
 /NOTES.md
 /static/documents/*
+/static/exercices/*
 /static/fonts/*
 /static/presentations/*
 /static/presentation-qdmtl/*
