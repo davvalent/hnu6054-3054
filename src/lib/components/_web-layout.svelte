@@ -5,6 +5,7 @@ import {
 	afterUpdate,
 } from 'svelte';
 
+import { page } from '$app/stores';
 import { base } from '$app/paths';
 
 import "$lib/css/fonts.css";
@@ -14,8 +15,7 @@ export let layoutData;
 
 let navigationList;
 
-const dateTimeEdited = Date();
-let dateTimeGenerated = Date();
+const dateTime = new Date();
 
 function setAriaCurrent(nl) {
 
@@ -47,7 +47,7 @@ afterUpdate (() => {
 });
 
 function foobar() {
-  console.log('LIEN CLIKÉ');
+  console.log('LINK ACTIVATED');
   window.location.href = '?print'
 }
 </script>
@@ -80,8 +80,7 @@ function foobar() {
   <h1>{layoutData.title}</h1>
 
   {#if layoutData.date}
-  <p>Page éditée le {dateTimeEdited}</p>
-  <p>Page générée le {dateTimeGenerated}</p>
+  <p>{$page.data.date}</p>
   {/if}
 
   {#if layoutData.print}
@@ -106,13 +105,13 @@ function foobar() {
 <footer>
   <p><a href="{base}/a-propos">À propos</p>
   <p><a href="https://mas.to/tags/hnu6054/">#hnu6054@mas.to</a></p>
-  <p>{new Date()}</p>
+  <p>Mise à jour : {layoutData.dateGenerated}</p>
 </footer>
 
 <style>
 
   header {
-    border-bottom: solid 2px;
+    border-bottom: 2px solid;
   }
   
   header, footer {

@@ -5,14 +5,14 @@
 
 <script>
 
-import {
-	onMount,
-} from 'svelte';
-
+import { onMount } from 'svelte';
+import { page } from '$app/stores';
 import PrintLayout from '$lib/components/_print-layout.svelte';
 import WebLayout from '$lib/components/_web-layout.svelte';
 
 export let data;
+
+console.log("DATA:", data);
 
 let LayoutComponent;
 let printLayout;
@@ -28,8 +28,16 @@ onMount(() => {
 </script>
 
 <svelte:head>
-  <meta name="author" content="{data.author}" />
-  <meta name="title" content="{data.siteTitle}" />
+  <!-- meta -->
+  <title>HNU6054 | {$page.data.title}</title>
+  <meta name="author" content="{$page.data.author}" />
+  <meta name="description" content="{$page.data.description}" />
+  <meta name="generator" content="Svelte" />
+
+  <!-- DC -->
+  <meta property="dc:title" content="{$page.data.title}" />
+  <meta property="dc:date" content="{$page.data.date}" />
+  
 </svelte:head>
 
 <svelte:component

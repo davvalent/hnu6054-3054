@@ -1,6 +1,8 @@
 /**
  * +layout.server.js
  * gestion des URL
+ * retourne les métadonnées du site
+ * retourne les métadonnées du document
  */
 
 import { base } from '$app/paths';
@@ -50,18 +52,17 @@ export const load = async ({ url }) => { // voir https://kit.svelte.dev/docs/loa
     metaData = await import(`$lib/content/metadata.md`);
   }
 
-  siteMetaData = await import(`$lib/content/site-metadata.md`);
-
   const { title, date, author, description, print } = metaData.metadata;
-  const { siteTitle } = siteMetaData.metadata;
   
+  const dateGenerated = new Date();
+
   return {
     title,
-    siteTitle,
     author,
     date,
     description,
     print,
     path: url.pathname,
+    dateGenerated: dateGenerated.toLocaleString()
   };
 };
