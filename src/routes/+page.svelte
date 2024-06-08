@@ -1,18 +1,24 @@
 <!-- page d'accueil -->
 
 <script>
+  import Access from '$lib/components/access.svelte';
   export let data;
+  const seances = data.seances;
 </script>
 
-<h1>Séances</h1>
+<!-- <h1>Séances</h1> -->
 
 <section>
   <h2>Séance 1</h2>
   <ul class="seances">
-    {#each data.seances as seance}
+    {#each seances as seance}
       {#if seance.meta.seance === 1}
         <li>
-          <a href="s/{seance.slug}">{seance.meta.title}</a>
+          <Access
+            deactivated = {seance.meta.deactivated}
+            slug = {seance.slug}
+            title = {seance.meta.title}
+          />
           <hr>
           <time datetime="{seance.meta.date}">{seance.meta.date}</time>
         </li>
@@ -22,10 +28,14 @@
 
   <h2>Séance 2</h2>
   <ul class="seances">
-    {#each data.seances as seance}
+    {#each seances as seance}
       {#if seance.meta.seance === 2}
         <li>
-          <a href="s/{seance.slug}">{seance.meta.title}</a>
+          <Access
+            deactivated = {seance.meta.deactivated}
+            slug = {seance.slug}
+            title = {seance.meta.title}
+          />
           <hr>
           <time datetime="{seance.meta.date}">{seance.meta.date}</time>
         </li>
@@ -34,11 +44,15 @@
   </ul>
 
   <h2>Séance 3</h2>
-  <ul>
-    {#each data.seances as seance}
+  <ul class="seances">
+    {#each seances as seance}
       {#if seance.meta.seance === 3}
         <li>
-          <a href="s/{seance.slug}">{seance.meta.title}</a>
+          <Access
+            deactivated = {seance.meta.deactivated}
+            slug = {seance.slug}
+            title = {seance.meta.title}
+          />
           <hr>
           <time datetime="{seance.meta.date}">{seance.meta.date}</time>
         </li>
@@ -53,22 +67,11 @@
   padding: 0;
 }
 
-ul a {
-  text-decoration: none;
-}
-
 .seances li {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: .7rem;
-}
-
-.seances li a {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	text-decoration: none;
 }
 
 .seances hr {
