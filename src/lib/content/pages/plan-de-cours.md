@@ -1,11 +1,10 @@
 ---
 title: Plan de cours
 author: David Valentine
-date_published: 2024-05-24
 tags: [hnu6054, hnu3054]
 description: |
   Humanités numériques : Web sémantique et données. Atelier sur les principes du Web sémantique et des données ouvertes liées.
-date: false
+date: "2024-06-10"
 print: true
 ---
 ## Informations pratiques
@@ -23,14 +22,14 @@ print: true
 ## Présentation
 
 Les métadonnées occupent une place cruciale dans l’environnement numérique.
-Depuis plusieurs années, les institutions patrimoniales et culturelles ont largement investi les technologies du web sémantique.
-Les grandes masses de données désormais disponibles sous forme de données liées ouvrent la voie à de nombreuses applications dans le domaine culturel et de l’édition numérique.
+Depuis plusieurs années, les institutions patrimoniales et culturelles ont largement investi les technologies du web sémantique.<!-- important pour les HN -->
+Les grandes masses de données désormais disponibles sous forme de données liées ouvrent la voie à de nombreuses applications dans le domaine culturel, des humanités et de l’édition numériques.
 
 Cet atelier est consacré aux applications du web sémantique dans le domaine des humanités numériques, de l’édition numérique et de la culture.
 Il propose une introduction aux principes et aux technologies du web sémantique et du web de données.
-En s’appuyant sur des projets réels, une attention particulière sera accordée à la pratique et notamment à l’écriture de requêtes en utilisant le protocole et le langage de requêtes SPARQL.
+En s’appuyant sur des projets réels, une attention particulière sera accordée à la pratique et notamment **à la modélisation** et à l’écriture de requêtes en utilisant le protocole et le langage de requêtes SPARQL.
 
-L’atelier ne nécessite aucun pré-requis technique et s’adresse à des étudiantes ou des étudiants sans formation informatique préalable.
+L’atelier ne nécessite aucun prérequis technique et s’adresse à des étudiantes ou des étudiants sans formation informatique préalable.
 Toutes les notions seront introduites et expliquées en cours.
 
 ### Objectifs
@@ -46,20 +45,32 @@ Toutes les notions seront introduites et expliquées en cours.
 
 Le programme des séances est conçu selon un parcours progressif.
 Partant d’une présentation générale de l’architecture du web et des enjeux relatifs à la production de données ouvertes et liées, on envisage leur application au domaine culturel.
+Nous aborderons les enjeux de modélisation nécessaires à une compréhension de base de l'articulation entre les divers modèles du web sémantique.
+Ces enjeux nous permettront de comprendre comment manipuler des données sur le web grâce au langage de requête SPARQL.
 
 Le cours se déroule en trois séances intensives qui associent étroitement la théorie et son application à la pratique.
+Les exposés magistraux seront ponctués de petits excercices pratiques qui visent à mettre en action les notions abordées.
 
 ## Évaluation
 
 ### Travaux
 
-1. Travail pratique (chez soi) exploration de Persée (40%)
-1. Travail pratique (chez soi) sur des requêtes SPARQL (50%)
-1. Participation et présence en classe (10%)
+Option séances thématiques :
+
+- Travail pratique (chez soi) : exploration d’un graphe avec une interface graphique (Sparnatural) (30%)
+- Travail pratique (chez soi) : travail de modélisation (30%)
+- Travail pratique (chez soi) sur des requêtes SPARQL (40%)
+
+Original :
+
+- Travail pratique (chez soi) **exploration de Persée** (40%)
+- **Travail de modélisation?**
+- Travail pratique (chez soi) sur des requêtes SPARQL (50%)
+- Participation et présence en classe (10%)
 
 Comme l’atelier s’adresse à des novices, c’est la participation aux exercices qui est principalement évaluée, plus que les résultats.
 
-Remarque : les exigences propres aux sigles HNU6054 et HNU3054 sont décrites dans les protocoles.
+Remarque : les exigences propres aux sigles HNU6054 et HNU3054 seront décrites en classe.
 
 ### Participation
 
@@ -68,20 +79,29 @@ Dans l’éventualité où vous deviez rencontrer des difficultés pour remplir 
 
 ### Lectures et travail personnel 
 
-Outre une bibliographie sommaire, plusieurs lectures sont proposées avec le cours.
+**Outre une bibliographie sommaire, plusieurs lectures sont proposées.
 Ces références sont indiquées dans le plan de cours.
 Merci d’avoir lu et étudié ces publications avant les sessions afin de pouvoir en discuter.
-À cet effet, il est recommandé de prendre des notes pendant vos lectures, et de les apporter en cours.
+À cet effet, il est recommandé de prendre des notes pendant vos lectures, et de les apporter en cours.**
 
 ## Intégrité, fraude et plagiat
 
 Ce cours observe la politique de l’Université de Montréal sur l’intégrité dans les études qui est consultable à cette adresse : [http://www.integrite.umontreal.ca](http://www.integrite.umontreal.ca/).
 Il est de votre devoir de la connaître et de vous y conformer.
 
+### Intelligence artificielle générative
+
+Si vous prévoyez de faire usage des outils de l’intelligence artificielle générative (ChatGPT, etc.) pour la réalisation de vos travaux, veuillez observer les modalités suivantes :
+
+- consultez l’enseignant <u>**avant**</u> de commencer votre travail
+- assurez-vous de bien comprendre les modalités d’utilisation de ces outils dans le cadre de cet atelier
+
+Ces modalités seront clairement explicitées et précisées sur avis d’intention de votre part.
+
 ## Accommodements
 
 En accord avec la Politique-cadre sur l’intégration des personnes en situation de handicap, des mesures d’accommodement peuvent être mises en place pour les cours et les examens.
-Pour pouvoir en bénéficier, vous devez tout d’abord vous inscrire au service de soutien aux étudiants en situation de handicap (SESH) qui évaluera  vos besoins.
+Pour pouvoir en bénéficier, vous devez tout d’abord vous inscrire au service de soutien aux étudiants en situation de handicap ([SESH](https://vieetudiante.umontreal.ca/a-propos/service/soutien-etudiants-situation-handicap)) qui évaluera  vos besoins.
 Indépendamment de cette démarche, n’hésitez pas à faire part à l’enseignant de difficultés éventuelles dont il faudrait tenir compte.
 
 N’hésitez pas à consulter la page du Centre étudiant de soutien à la réussite (Cesar) : [http://cesar.umontreal.ca](http://cesar.umontreal.ca)

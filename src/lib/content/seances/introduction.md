@@ -1,13 +1,22 @@
 ---
 title: |
   Introduction : architecture du web et web sémantique
-author: David Valentine
+author:
+  - Emmanuel Château-Dutier
+  - David Valentine
+description: |
+  Présentation de l’atelier sur le web sémantique et les données. Introduction aux principes des données ouvertes et liées.
 date: "2024-06-10"
-tags: [RDF, web]
+tags: [RDF, web, architecture du web]
 presentation: /presentations/seance-01.html
 seance: 1
+order: 1
+print: false
+deactivated: false
 ---
 ## Exercices
+
+À compléter selon ce qui se trouve dans le support de présentation.
 
 ### Formuler une requête HTTP et observer la réponse du serveur
 
