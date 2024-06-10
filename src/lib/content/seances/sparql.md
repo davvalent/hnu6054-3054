@@ -11,11 +11,9 @@ presentation: /presentations/seance-03.html
 seance: 3
 order: 1
 print: false
+deactivated: true
 
 ---
-Bonjour
-
 ## Ressources
 
-- 1.1
-- 1.2
+À venir

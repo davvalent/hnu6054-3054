@@ -23,11 +23,11 @@ print: true
 
 Les métadonnées occupent une place cruciale dans l’environnement numérique.
 Depuis plusieurs années, les institutions patrimoniales et culturelles ont largement investi les technologies du web sémantique.<!-- important pour les HN -->
-Les grandes masses de données désormais disponibles sous forme de données liées ouvrent la voie à de nombreuses applications dans le domaine culturel, des humanités et de l’édition numériques.
+Les grandes masses de données désormais disponibles sous forme de données liées ouvrent la voie à de nombreuses applications dans les domaines de la culture, des humanités et de l’édition numériques.
 
-Cet atelier est consacré aux applications du web sémantique dans le domaine des humanités numériques, de l’édition numérique et de la culture.
+Cet atelier est consacré aux applications du web sémantique dans ces domaines.
 Il propose une introduction aux principes et aux technologies du web sémantique et du web de données.
-En s’appuyant sur des projets réels, une attention particulière sera accordée à la pratique et notamment **à la modélisation** et à l’écriture de requêtes en utilisant le protocole et le langage de requêtes SPARQL.
+En s’appuyant sur des projets réels, une attention particulière sera accordée à la pratique et notamment à la modélisation et à l’écriture de requêtes en utilisant le protocole et le langage de requêtes SPARQL.
 
 L’atelier ne nécessite aucun prérequis technique et s’adresse à des étudiantes ou des étudiants sans formation informatique préalable.
 Toutes les notions seront introduites et expliquées en cours.
@@ -55,17 +55,17 @@ Les exposés magistraux seront ponctués de petits excercices pratiques qui vise
 
 ### Travaux
 
-Option séances thématiques :
+<!-- Option séances thématiques :
 
 - Travail pratique (chez soi) : exploration d’un graphe avec une interface graphique (Sparnatural) (30%)
 - Travail pratique (chez soi) : travail de modélisation (30%)
 - Travail pratique (chez soi) sur des requêtes SPARQL (40%)
 
-Original :
+Original : -->
 
-- Travail pratique (chez soi) **exploration de Persée** (40%)
-- **Travail de modélisation?**
-- Travail pratique (chez soi) sur des requêtes SPARQL (50%)
+- Travail pratique (chez soi) exploration de DBpedia avec Sparnatural (40%)
+<!-- - **Travail de modélisation?** -->
+- Travail pratique (chez soi) sur l’analyse d’un projet du web sémantique et sur la production de requêtes SPARQL (50%)
 - Participation et présence en classe (10%)
 
 Comme l’atelier s’adresse à des novices, c’est la participation aux exercices qui est principalement évaluée, plus que les résultats.
@@ -75,14 +75,14 @@ Remarque : les exigences propres aux sigles HNU6054 et HNU3054 seront décrites
 ### Participation
 
 La participation au cours est requise et votre présence sera vérifiée à chaque séance.
-Dans l’éventualité où vous deviez rencontrer des difficultés pour remplir ces obligations, vous êtes priés de bien vouloir immédiatement prendre contact avec l’enseignant.
+Dans l’éventualité où vous deviez rencontrer des difficultés pour remplir ces obligations, prière de bien vouloir immédiatement prendre contact avec l’enseignant.
 
 ### Lectures et travail personnel 
 
-**Outre une bibliographie sommaire, plusieurs lectures sont proposées.
+Outre une bibliographie sommaire, des lectures sont proposées.
 Ces références sont indiquées dans le plan de cours.
 Merci d’avoir lu et étudié ces publications avant les sessions afin de pouvoir en discuter.
-À cet effet, il est recommandé de prendre des notes pendant vos lectures, et de les apporter en cours.**
+À cet effet, il est recommandé de prendre des notes pendant vos lectures, et de les apporter en cours.
 
 ## Intégrité, fraude et plagiat
 
@@ -93,7 +93,7 @@ Il est de votre devoir de la connaître et de vous y conformer.
 
 Si vous prévoyez de faire usage des outils de l’intelligence artificielle générative (ChatGPT, etc.) pour la réalisation de vos travaux, veuillez observer les modalités suivantes :
 
-- consultez l’enseignant <u>**avant**</u> de commencer votre travail
+- consultez l’enseignant **avant** de commencer votre travail
 - assurez-vous de bien comprendre les modalités d’utilisation de ces outils dans le cadre de cet atelier
 
 Ces modalités seront clairement explicitées et précisées sur avis d’intention de votre part.
@@ -108,19 +108,12 @@ N’hésitez pas à consulter la page du Centre étudiant de soutien à la réus
 
 ## Calendrier
 
-### Mardi 23 mai 2023, 9h30-11h30 (séance 1.1)
+### Séance 1 : lundi 10 juin 2024
 
-- Introduction
 - Architecture du web
 - Principes du web sémantique et du Linked Open Data
-
-### Mardi 23 mai 2023, 12h30-15h30 (séance 1.2)
-
 - Applications du web sémantique au domaine culturel
-- Le cadre de description <abbr title="Resource Description Framework">RDF</abbr>
-- TP RDF
-<span style="display: none">- **Présentation TD??**</span>
-- Ontologies et vocabulaires structurés
+- Le cadre de description <abbr title="Resource Description Framework">RDF</abbr> (si le temps le permet)
 
 #### Lectures
 
@@ -128,43 +121,32 @@ N’hésitez pas à consulter la page du Centre étudiant de soutien à la réus
 - Jonathan Blaney. Introduction to the Principles of Linked Open Data. The Programming Historian. 2017. https://doi.org/10.46430/phen0068
 - *The next web*. Réalisé par Tim Berners-Lee. 2019. https://www.ted.com/talks/tim_berners_lee_the_next_web/
 
-### Mercredi 24 2023, 9h30-11h30 (séance 2.1)
+### Séance 2 : mercredi 12 juin 2024
+
+- Le cadre de description <abbr title="Resource Description Framework">RDF</abbr>
+- Présentation des exercices
+- Ontologies et vocabulaires structurés
+- TP RDFS
+
+#### Lectures
+
+- RDF 1.1 Primer, W3C Working Group Note, 24 June 2014, http://www.w3.org/TR/rdf11-primer/
+
+### Séance 3 : vendredi 14 juin 2024
 
 - Ontologies et vocabulaires structurés (suite)
-- TP RDFs
-
-#### Lectures
-
-- RDF 1.1 Primer, W3C Working Group Note 24 June 2014, http://www.w3.org/TR/rdf11-primer/
-
-### Mercredi 24 2023, 12h30-15h30 (séance 2.2)
-
-- Présentation des exercices
 - Le protocole et le langage de requête SPARQL
-- Notation SPARQL
 - TP Écriture de requêtes SPARQL
-
-#### Lectures
-
-- Bob Ducharme. « Jumping Right In: Some Data and Some Queries. » Learning  SPARQL. Querying and Updating with SPARQL 1.1. 2e édition. O’Reilly,  2013
-
-### Vendredi 26 mars 2022, 9h30-11h30 (séance 3.1)
-
-- Reprise exercice écriture de requêtes SPARQL
 - Florilège d’applications du Linked Open Data
+- Discussion
 
 #### Lectures
 
-- Matthew Lincoln. Using SPARQL to access Linked Open Data. The Programming Historian. 2015. https://doi.org/10.46430/phen0047 (retiré)
-
-### Vendredi 26 mars 2022, 12h30-15h30 (séance 3.2)
-
-- QDMTL : de l’analyse des sources à la publication de données
-- Discussion
+- Bob Ducharme. « Jumping Right In: Some Data and Some Queries. » Learning  SPARQL. Querying and Updating with SPARQL 1.1. 2e édition. O’Reilly, 2013
+- Matthew Lincoln. Using SPARQL to access Linked Open Data. The Programming Historian. 2015. https://doi.org/10.46430/phen0047 **(retiré)**
 
 ## Bibliographie sommaire
 
-- Emmanuelle Bermès (dir.). *Le Web sémantique en bibliothèque*. « Bibliothèques ». Paris : Édition du Cercle de la Librairie, 2013. ISBN 9782765414179
 - Eero Hyvönen. *Publishing and Using Cultural Heritage Linked Data on the Semantic Web.* Synthesis Lectures on semantic web : Theory and technology. Morgan & Claypool publishers, 2012. ISBN 1608459985 https://doi.org/10.2200/S00452ED1V01Y201210WBE003
 - Murtha Baca (ed.). *Introduction to Metadata*. 3e édition. Getty, 2016. ISBN 978-0892368969 http://www.getty.edu/publications/intrometadata
 - Patricia Harpring. *Introduction to Controlled Vocabularies: Terminologies for Art, Architecture, and Other Cultural Works*. Getty, 2010. ISBN 978-1-60606-027-8 http://www.getty.edu/publications/virtuallibrary/160606018X.html
