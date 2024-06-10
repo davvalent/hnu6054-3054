@@ -1,26 +1,10 @@
 ---
 title: Bibliographie
 author: David Valentine
-published_date: 2024-02-28
-tags: []
+date: "2024-06-07"
+tags: [bibliographie, bibliography]
 description: |
   Bibliographie et ressources utiles concernant le web sémantique dans le cadre du cours HNU6054.
+print: true
 ---
-## Plan
-
-Plan pour une bibliographie détaillée :
-
-- Fondements
-- Dans les humanités numériques
-- Ressources pédagogiques
-- Pour aller plus loin
-
-## Ancien plan
-
-- Pour aller plus loin
-- Bibliographie (à répartir)
-- Articles
-- Cours en ligne
-- Tutoriaux choisis
-- Outils
-- WTF
+**Bibliothèque Zotero :** https://zotero.org/groups/5407336/hnu6054-3054-web-semantique-et-donnees/library

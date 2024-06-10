@@ -29,11 +29,26 @@ const collectionsPlusFormattedReferences = await (async () => {
       html = html.replace('line-height: 1.35; ', "");
       html = html.replace("1em", "2em");
       html = html.replace("-1em", "-2em");
+      html = html.replaceAll(' style="margin-bottom: 1em;"', "");
       collection.formattedData = html.replace('<?xml version="1.0"?>\n', "");
       return collection;
     }).catch(e => console.log(e));
   }));
 })();
+
+collectionsPlusFormattedReferences.sort((a, b) => {
+  if (a.data.name < b.data.name) {
+    return -1;
+  }
+  if (a.data.name > b.data.name) {
+    return 1;
+  }
+  return 0;
+});
+
+collectionsPlusFormattedReferences.forEach((coll => {
+  coll.data.name = coll.data.name.match(/[0-9]{2}-(.+)/)[1];
+}))
 
 return {
     collections: collectionsPlusFormattedReferences
