@@ -1,17 +1,41 @@
 ## HNU6054 – Humanités numériques : Web sémantique et données
 
 # Introduction : architecture du web et web sémantique
+
 Emmanuel Château-Dutier et Antoine Fauchié, mars 2022<br>
-David Valentine, mai 2023
+David Valentine, mai 2023, juin 2024
 
 Site web pour les ressources du cours :  
-[https://davvalent.github.io/hnu6054/](https://davvalent.github.io/hnu6054/)
+[https://davvalent.github.io/hnu6054-3054/](https://davvalent.github.io/hnu6054-3054/)
 
 ???
 
 - Accueil des participants
-- Présentation des intervenants
-- Conditions matérielles de la formation (matériel informatique, pauses, etc.)
+- Présentation de l'enseignant
+- Conditions matérielles de la formation
+  - matériel informatique
+  - logiciels : éditeur et navigateur
+  - Studium et site web
+  - pauses
+    - termine vers 11h15
+    - pause vers 13h50
+    - termine vers 15h20
+
+===↓===
+
+# Tour de table
+
+- Nom
+- Programme d’études
+- Raisons et intérêts de recherche
+- Cours et ateliers en humanités numériques
+
+???
+
+- Nom
+- Programme d’études
+- Raisons et intérêts de recherche
+- Cours et ateliers en humanités numériques
 
 ===↓===
 
@@ -19,33 +43,29 @@ Site web pour les ressources du cours :
 
 ???
 
-Les technologies du web sémantique et l’approche du web de données liées désignent une combinaison de techniques d’outils et de standards qui permettent de transformer le world wide web d’un web de documents à un web de données. Lorsque cette approche est appliquée au monde des bibliothèques, des archives, des musées, et plus largement au domaine des humanités numériques, les données liées transforment la manière dont nous pouvons découvrir, analyser, et visualiser les contenus culturels et scientifiques.
+- Les technologies du web sémantique et l’approche du web de données liées, désignent une combinaison de techniques, d’outils et de standards qui permettent de transformer le world wide web d’un web de documents à un web de données.
+- En appliquant cette approche au domaine des humanités numériques, à la recherche, mais aussi au monde des bibliothèques, des archives et des musées, les données liées permettre de redécouvrir en quelque sorte la manière dont on peut découvrir, analyser, et visualiser les contenus culturels et scientifiques sur le web.
+- Donc les données ouvertes et liées (Linked Open Data, LOD)
+  - permettent aux institutions patrimoniales et culturelles de publier et de partager des informations sur leur collections
+  - permettent aux projets de recherche de diffuser des informations sur les objets de la recherche
+  - en ouvrant de très large possibilités
+    - de réutilisations
+    - et d’enrichissements
+    - et permet d’augmenter la visibilité des contenus.
 
-Les données ouvertes et liées (Linked Open Data LOD) permettent aux institutions patrimoniales et culturelles de publier et de partager des informations sur leur collections, aux projets de recherche des informations sur les objets de la recherche, en ouvrant d’infinies possibilités de réutilisations et d’enrichissements et afin d’augmenter leur visibilité.
+Tout ça pose un certain nombre de défis pour les acteurs du monde culturel dans l’appropriation de ces technologies :
 
-Cependant, les acteurs du monde culturels sont confrontés à plusieurs enjeux dans l’appropriation de ces technologies :
+- bien sûr, l’adoption de ces technologies et de ces standards nécessite des compétences techniques particulières
+- Mais partager les données des collections suppose d'abord l’adoption de politiques d’ouverture de données qui sont adaptées.
+- Cette démarche présente également des enjeux relatifs à l’autorité des institutions. Dans un contexte distribué, où tout est lié à une échelle globale, on s'ouvre à des réseaux de données potentiellement très vastes, où chacun peut identifier, désigner et décrire à sa façon un objet culturel; donc des enjeux de rapport aux autorités.
 
-- bien sûr, l’adoption de ces technologies et de ces standards nécessite des compétences techniques particulières; pour autant, ce n’est pas le seul enjeu pour les institutions ou les acteurs du secteur culturel.
-- En effet, partager les données des collections suppose l’adoption de politiques d’ouverture de données adaptées.
-- Cette démarche présente également des enjeux relatifs à l’autorité des institutions. Dans un contexte distribué, il y a un changement d’échelle qui n’est pas sans impact sur les collections; on s'ouvre à des réseaux de données potentiellement très vastes, où chacun peut identifier, désigner et décrire à sa façon un objet culturel.
+Appréhender toutes ces choses.
 
 ===↓===
 
-## Présentation du plan de cours
-
-https://davvalent.github.io/hnu6054/
-
-### Objectifs de la formation
-
-### Programme des séances
-
-### Présentation de l’évaluation
-
-### Présentation des ressources
+## La question des métadonnées dans le secteur culturel
 
 ???
-
-### La question des métadonnées dans le secteur de l’édition
 
 Comme de nombreux secteurs d’activité numérique, le monde de l’édition est évidemment directement concerné par la question des métadonnées. Ces métadonnées désignent des informations descriptives sur les contenus qui peuvent être utilisées à de nombreuses fins dans un éco-système numérique :
 
@@ -56,13 +76,13 @@ Comme de nombreux secteurs d’activité numérique, le monde de l’édition es
 - pour collecter des données d’utilisation
 - etc.
 
-Dans les humanités numériques, on cherche plus souvent à décrire les objets de la recherche, qui peuvent être des documents, mais aussi des objets que l’on cherche à reconstituer à travers une représentation formelle. Par exemple, on pourrait décrire des bâtiments ou des objets muséaux afin d’utiliser ces représentation pour tenter de répondre à des questionnements.
+Dans les humanités numériques, on cherche plus souvent à décrire les objets de la recherche, qui peuvent être des documents, mais aussi des objets que l’on cherche à reconstituer à travers une représentation formelle. Par exemple, on pourrait décrire des bâtiments ou des objets muséaux afin d’utiliser ces représentations pour tenter de répondre à des questions de recherche, ou pour effectuer de la mise en valeur de contenus.
 
-Les choix de structuration de données sont déterminés par l’exploitation visées. En d’autres termes, ce sont les objectifs d’un projet de numérisation ou d’un projet de recherche qui déterminent ce qui doit être décrit, explicité, et discrétisé.
+Les choix de structuration de données sont déterminés par l’exploitation visée. Autrement dit, ce sont les objectifs d’un projet de numérisation ou d’un projet de recherche qui déterminent ce qui doit être décrit, explicité, et discrétisé.
 
 Beaucoup de projets numériques sont fondés sur l’utilisation de métadonnées. On recommande pour celles-ci l’emploi de format ouverts et interopérables, fondés sur des standards.
 
-Dans le monde de l’édition numérique, de nombreux modèles ont été développés et sont largement utilisés :
+Par exemple, dans le monde de l’édition numérique, de nombreux modèles ont été développés et sont largement utilisés :
 
 - Dublin Core
 - modèles bibliographiques tels que MARC dans le monde des bibliothèques, Bibframe, etc.
@@ -75,25 +95,45 @@ Ce n’est pas un standard du monde muséal à proprement parler, mais il est pr
 
 Alors au cours de cet atelier, on va particulièrement nous intéresser à un ensemble de technologies promues et standardisées par le W3C (un organisme en charge de la standardisation du web) pour publier des données et assurer leur interopérabilité. Et on désigne globalement cet ensemble technologique sous l’appellation de **technologies du web sémantique**.
 
-Nous parlerons également de données ouvertes et liées, ou Linked Open Data (LOD), pour désigner une manière d’utiliser la plateforme du word wide web afin de publier et connecter ces données entre elles sur le réseau.
+Nous parlerons également de données ouvertes et liées, ou Linked Open Data (LOD), pour désigner une manière d’utiliser la plateforme du word wide web afin de publier et de connecter ces données entre elles sur le réseau, sur le web.
+
+===↓===
+
+## Présentation du plan de cours
+
+[https://davvalent.github.io/hnu6054-3054/plan-de-cours/](https://davvalent.github.io/hnu6054-3054/plan-de-cours/)
+
+### Objectifs de la formation
+
+### Programme des séances
+
+### Présentation de l’évaluation
+
+### Présentation des ressources
+
+???
 
 ### Une introduction au web sémantique et au LOD
 
 L’atelier constitue une première introduction au monde du web sémantique et au domaine des données ouvertes et liées. En si peu de temps nous ne ferons pas de vous des spécialistes, mais il s’agit d’acquérir une compréhension générale des enjeux posés par ces technologies et leurs applications possibles au domaine culturel. 
 
-Ce faisant, il s’agit également de vous familiariser avec le monde des métadonnées culturelles et leurs enjeux cruciaux pour la découvrabilité des ressources dans l’écosystème numérique.
+Ce faisant, il s’agit également de vous familiariser avec le monde des métadonnées culturelles et leur place centrale pour la découvrabilité des ressources dans l’écosystème numérique.
 
-Enfin, nous vous proposerons une initiation à l’utilisation d’un langage de requête. SPARQL est un protocole et un langage destiné travailler avec des données dans le format du web sémantique.
+Enfin, nous vous proposerons une initiation à l’utilisation d’un langage de requête. SPARQL est un protocole et un langage destiné travailler avec des données dans le cadre du web sémantique.
 
-Avec ce cours, il s’agit notamment d’essayer de démystifier un domaine souvent jugé à tort compliqué mais qui présente actuellement une grande actualité au Québec et au Canada avec plusieurs projets d’ampleur. Comme vous vous en apercevrez, sa complexité ne tient sans doute pas tant aux aspects technologiques mais est plutôt liée à la conjonction d’aspect techniques et de domaines d’application métiers spécialisés.
+J'aimerais qu'on démystifie ce domaine, souvent jugé compliqué, à tort ou à raison, mais qui présente une grande actualité au Québec et au Canada avec plusieurs projets d’ampleur. Comme vous vous en apercevrez, sa complexité ne tient sans doute pas tant aux aspects technologiques mais est plutôt liée à la conjonction d’aspect techniques et de domaines d’application métiers spécialisés.
 
 ### Nombreuses initiatives en cours dans le domaine culturel
 
-Le projet du web sémantique et du web de données ouvertes et liées et un projet porté depuis le milieu de la première décennie des années 2000 par le fondateur du world wide web, Tim Berners Lee (cf. lecture). Solid, le projet sur lequel travaille actuellement Tim Berners Lee repose très largement sur l’application de ces technologies.
+?...
 
-Toutefois, au terme de plus d’une décennie d’expérimentation, la promesse du websémantique est loin d’être entièrement tenue. Ce projet n’a certainement pas connu le succès fulgurant qu’a rencontré le premier web dont on fêtait récemment les 30 ans.
+Fin 90, début 2000, principalement porté par TBL, mais qui décolle tranquillement... Ce projet n’a certainement pas connu le succès fulgurant qu’a rencontré le premier web qui existe depuis environ 35 ans.
 
-Néanmoins, de nombreuses initiatives ont émergé ces dernières années, en particulier dans le domaine patrimonial et culturel, qui témoignent du très grand intérêt de ces approches. L’approche du web sémantique et du web de données ouvertes et liées s’est affirmée comme une solution de choix pour le partage et l’échange d’information de qualité. Ces modèles présentent en effet une très grande expressivité qui permet de facilement bien rendre compte de réalités complexes et hétérogènes comme celles auxquelles on est souvent confrontés pour décrire des objets culturels.
+~~Le projet du web sémantique et du web de données ouvertes et liées et un projet porté depuis le milieu de la première décennie des années 2000 par le fondateur du world wide web, Tim Berners Lee (cf. lecture). Solid, le projet sur lequel travaille actuellement Tim Berners Lee repose très largement sur l’application de ces technologies.~~
+
+~~Toutefois, au terme de plus d’une décennie d’expérimentation, la promesse du web sémantique est loin d’être entièrement tenue.~~
+
+Néanmoins, de nombreuses initiatives ont émergé ces dernières années, en particulier dans le domaine patrimonial et culturel, qui témoignent du très grand intérêt de ces approches, qui se sont affirmées comme une solution de choix pour le partage et l’échange d’information de qualité. Ces modèles présentent en effet une très grande expressivité qui permet de facilement bien rendre compte de réalités complexes et hétérogènes comme celles auxquelles on est souvent confrontés pour décrire des objets culturels.
 
 Petit florilège de projets
 
@@ -101,9 +141,8 @@ Petit florilège de projets
 - Research Space : Le rêve de l’historien de l’art rencontre ce que font actuellement les musées
 - Mesure 131 Plan culturel numérique du Québec
 - RCIP
+- CIDOC CRM
 - Peu d’application encore dans le monde de l’édition. Mais toutefois citer : Persée, Open Citation, etc.
-
-Idée exploration : cours bonus
 
 ===↓===
 
@@ -128,19 +167,20 @@ Le programme des séances est conçu selon un parcours progressif. Partant  d’
 
 Le cours se déroule en trois séances intensives qui associent étroitement la théorie et son application à la pratique.
 
-### Quels pré-requis ?
+### Quels prérequis ?
 
-- **aucun prérequis informatique** : simplement ne pas avoir peur !
+- **aucun prérequis informatique** : simplement ne pas avoir peur !
 - on va faire du code... mais plutôt que de programmation, il s’agira d’**enjeux de notation et de modélisation**. La difficulté concerne plutôt les connaissances métier et leur abstration.
-- une initiation aux langage de requête : complexe, mais abordé à partir de cas pratiques.
+- une initiation au langage de requête : complexe, mais abordé à partir de cas pratiques.
 
 ===↓===
 
-## Mardi 23 mai 2023, 9h30-11h30 (séance 1.1)
+## Séance 1 : lundi 10 juin 2024
 
 - Architecture du web
 - Principes du web sémantique et du Linked Open Data
 - Applications du web sémantique au domaine culturel
+- Le cadre de description <abbr title="Resource Description Framework">RDF</abbr> (si le temps le permet)
 
 ### Lectures
 
@@ -148,55 +188,38 @@ Le cours se déroule en trois séances intensives qui associent étroitement la 
 - Jonathan Blaney. Introduction to the Principles of Linked Open Data. The Programming Historian. 2017. https://doi.org/10.46430/phen0068
 - *The next web*. Réalisé par Tim Berners-Lee. 2019. https://www.ted.com/talks/tim_berners_lee_the_next_web/
 
+???
+
+À titre indicatif
+
 ===↓===
 
-## Mardi 23 mai 2023, 12h30-15h30 (séance 1.2)
+## Séance 2 : mercredi 12 juin 2024
 
-- Applications du web sémantique au domaine culturel
-- Le cadre de description <abbr title="Resource Description Framework">RDF</abbr>
-- TP RDF
-<span style="display: none">- **Présentation TD??**</span>
+- Le cadre de description <abbr title="Resource Description Framework">RDF</abbr> (suite)
+- Présentation des exercices
 - Ontologies et vocabulaires structurés
-
-===↓===
-
-## Mercredi 24 2023, 9h30-11h30 (séance 2.1)
-
-- Ontologies et vocabulaires structurés (suite)
-- TP RDFs
+- TP RDFS
 
 ### Lectures
 
-- RDF 1.1 Primer, W3C Working Group Note 24 June 2014, http://www.w3.org/TR/rdf11-primer/
+- RDF 1.1 Primer, W3C Working Group Note, 24 June 2014, http://www.w3.org/TR/rdf11-primer/
 
 ===↓===
 
-## Mercredi 24 2023, 12h30-15h30 (séance 2.2)
+## Séance 3 : vendredi 14 juin 2024
 
-- Présentation des exercices
+- Ontologies et vocabulaires structurés (suite)
 - Le protocole et le langage de requête SPARQL
 - Notation SPARQL
 - TP Écriture de requêtes SPARQL
-
-### Lectures
-
-- Bob Ducharme. « Jumping Right In: Some Data and Some Queries. » Learning  SPARQL. Querying and Updating with SPARQL 1.1. 2e édition. O’Reilly,  2013
-
-===↓===
-
-## Vendredi 26 mars 2022, 9h30-11h30 (séance 3.1)
-
-- Reprise exercice écriture de requêtes SPARQL
 - Florilège d’applications du Linked Open Data
+- Discussion
 
 ### Lectures
 
-- Matthew Lincoln. Using SPARQL to access Linked Open Data. The Programming Historian. 2015. https://doi.org/10.46430/phen0047 (retiré)
-
-## Vendredi 26 mars 2022, 12h30-15h30 (séance 3.2)
-
-- QDMTL : de l’analyse des sources à la publication de données
-- Discussion
+- Bob Ducharme. « Jumping Right In: Some Data and Some Queries. » Learning  SPARQL. Querying and Updating with SPARQL 1.1. 2e édition. O’Reilly, 2013
+- Matthew Lincoln. Using SPARQL to access Linked Open Data. The Programming Historian. 2015. https://doi.org/10.46430/phen0047 **(retiré)**
 
 ===↓===
 
@@ -206,8 +229,8 @@ Outre une bibliographie sommaire, plusieurs lectures sont proposées avec le cou
 
 ## Évaluations
 
-1. Travail pratique (chez soi) exploration de Persée (40%)
-1. Travail pratique (chez soi) sur des requêtes SPARQL (60%)
+1. Travail pratique (chez soi) exploration de DBpedia avec Sparnatural (40%)
+1. Travail pratique (chez soi) sur l’analyse d'un projet et sur la production de requêtes (50%)
 1. Participation et présence en classe (10%)
 
 Comme l’atelier s’adresse à des novices, **c’est la participation aux exercices qui est principalement évaluée plus que les résultats**.
@@ -243,7 +266,7 @@ Ce Linked Open Data prend une forme consistante dans plusieurs domaines et notam
 - Que recouvre la notion de Linked Open Data ?
 - Quelles en sont les applications dans le domaine culturel ?
 
-@todo revoir intro car redondante avec celle qui vient ensuite
+@todo revoir intro car redondante avec celle qui vient ensuite (pas si sûr...)
 
 <!-- sep -->
 ===↓===
@@ -255,14 +278,17 @@ Ce Linked Open Data prend une forme consistante dans plusieurs domaines et notam
 Avant d’aborder le cadre de description RDF et les principes du web sémantique, il me semble d’abord nécessaire de revenir avec vous sur l’architecture du web. En effet, les technologies du web sémantique et du web de données liées sont pour l’essentiel des applications de l’architecture du web. Il est donc important de bien avoir à l’esprit ses principes de conception généraux pour bien comprendre l’utilisation de ces technologies.
 
 ===↓===
+<!-- .slide:
+data-background-image="images/proposal.jpg" data-background-size="auto 100%"
+-->
 
-![proposal](images/proposal.jpg)
+<!-- ![proposal](images/proposal.jpg) -->
 
-[Tim Berners Lee, A Proposal, 1989.(https://www.w3.org/History/1989/proposal.html)]
+[Tim Berners Lee, A Proposal, 1989.](https://www.w3.org/History/1989/proposal.html)
 
 ???
 
-### Le projet initial du web
+## Le projet initial du web
 
 Origines dans le contexte du Centre d’étude et de recherche nucléaire (CERN) 
 
@@ -277,16 +303,18 @@ Les ressources en ligne (*on line*) sont accessibles via une adresse unique, Uni
 
 Un WWW à la fois en lecture et en écriture : *A CRUD Web !* (CRUD *create*, *read*, *update*, *delete*).
 
-### Caractéristiques
+## Caractéristiques
 
 On détaille les implémentations plus bas...
 
-- utilise TCP/IP
-- manière d’identifier les resources 
+- utilise TCP/IP (Transmission Control Protocol/Internet Protocol)
+- utilise une manière d’identifier les resources 
 - protocole d’échange
 - hypertexte
 
-### La notion d’hypertexte
+## La notion d’hypertexte
+
+Le web est basé sur la notion d'hyperetexte
 
 - terme proposé par Ted Nelson dans le cadre du [projet Xanadu](https://www.xanadu.net/)
 - décrit un texte non séquentiel qui comporte des embranchements et permet au lecteur de choisir son cheminement de lecture 
@@ -297,8 +325,6 @@ On détaille les implémentations plus bas...
 ===↓===
 
 ## Un réseau décentralisé
-
-
 
 ![vue du réseau](images/baran_schema.jpg)
 
@@ -370,12 +396,19 @@ Couches fonctionnelles derrière les moteurs de recherche sur base de http://en
 
 Présentation chronologique même si l’articulation des différentes couches est plutôt fonctionnelle. Par exemple, si les développements théoriques concernant l’hypertexte datent de la fin des années 60, il se greffe d’un point de vue fonctionnel sur Internet avec le web.
 
+Et donc il faut tout mettre ça ensemble pour comprendre comment fonctionne le genre de réseau qui nous intéresse.
+
 ===↓===
 
 ## La notion de réseau informatique
 
 - Un **réseau local** est un réseau informatique se limitant à une pièce ou un bâtiment. Il est souvent composé de plusieurs ordinateurs ou périphériques reliés entre eux.
 - Un **réseau étendu** est un réseau informatique couvrant une grande zone géographique qui peut s’étendre à la planète toute entière.
+
+???
+
+Donc tout ça pour créer des réseaux de machines par lesquels on échange de l'info.
+
 
 ===↓===
 
@@ -418,6 +451,10 @@ Un nom qui réfère à deux protocoles distincts :
 
 Adoptés le 1er janvier 1983 par le réseau Arpanet
 
+???
+
+C'est vraiment l'élément fondamental d'Internet.
+
 ===↓===
 
 ## Internet
@@ -429,7 +466,7 @@ Adoptés le 1er janvier 1983 par le réseau Arpanet
 
 FTP, Imap, pop, SMTP, HTTP, P2P, VoIP (Voice over IP), etc.
 
-#### Protocoles
+### Protocoles
 
 - **HTTP (HyperText Transfer Protocol)**
 <br>protocole de transfert hypertexte pour naviguer sur le web (HTTPS pour la version sécurisée)
@@ -455,11 +492,11 @@ Destiné à mettre à disposition des ressources pour les partager. Un syste�
 
 ???
 
-Destiné à mettre à disposition des ressources pour les partager.
+Plusieurs applications du réseau des réseaux. Courriels, transfère de fichiers, world wide web, téléphonie sur IP.
 
-Réseau de communication décentralisé et non-hiérarchique. Plusieurs applications du réseau des réseaux. Courriels, transfère de fichiers, world wide web, téléphonie sur IP.
+Web, destiné à mettre à disposition des ressources pour les partager.
 
-Une architecture client-serveur.
+Sous formeRéseau de communication décentralisé et non-hiérarchique basé sur une architecture client-serveur.
 
 Rôle des protocoles. TCP/IP pour véhiculer l’ensemble de l’information = couche de transport et d’indentification. Wifi, etc.
 
@@ -471,7 +508,7 @@ Sur cette base, le World Wide Web est constitué de trois principaux composants�
 
 ===↓===
 
-## Resources, représentations et identifiants
+## Ressources, représentations et identifiants
 
 - Toute information pouvant être nommée peut être une **ressource**
 - Une ressource peut recevoir plusieurs **représentations**
@@ -506,7 +543,7 @@ Puis identifiant prochaine diapo.
 
 ## IRI
 
-Internationalized Resource Identifier (**IRI**), Uniform Resource Identifier (**URI**), Uniforme Resource Locator (**URL**), Uniform Resource Name (**URN**), etc.
+Internationalized Resource Identifier (**IRI**), Uniform Resource Identifier (**URI**), Uniform Resource Locator (**URL**), Uniform Resource Name (**URN**), etc.
 
 Les IRI et les URI sont des identifiants sur le web. Les URL identifient la ressource par le moyen d’y accéder.
 
@@ -746,19 +783,19 @@ curl -I https://en.wikipedia.org/wiki/Victor_Hugo
 
 ## TP avec un client HTTP
 
-### Visitez l’adresse suivante avec un navigateur web
+Visitez l’adresse suivante avec un navigateur web :
 
 http://dbpedia.org/resource/Victor_Hugo
 
 - observez le contenu de la page
 - observez le contenu de la barre d’adresse
 
-### Visitez la même adresse avec un client HTTP
+Visitez la même adresse avec un client HTTP :
 
 - [cURL](https://curl.haxx.se) est un outil en ligne de commande pour formuler des requêtes HTTP
 - [ReqBin](https://reqbin.com/curl) est un client graphique web qui permet de formuler des requêtes HTTP
 
-### Essayer d’envoyer un message d’en-tête HTTP et observez le résultat
+Essayer d’envoyer un message d’en-tête HTTP et observez le résultat
 
 - `curl -H "Accept: application/rdf+xml" http://dbpedia.org/resource/Victor_Hugo`
 - `curl -H "Accept: application/turtle" http://dbpedia.org/resource/Victor_Hugo`
@@ -814,6 +851,8 @@ HTML est un langage de balisage qui capture la structure du document
 `<a href="http://url.com">ancre de l’hyperlien</a>`
 
 ???
+
+Ça nous mène vers une page HTML, qui un type de représentation.
 
 ### HTML se focalise sur la structure du document
 
@@ -1249,7 +1288,7 @@ Voici une visualisation réunissant les différentes technologies du web sémant
 
 ===↓===
 
-### Documents de références correspondants à ces différentes couches technologiques
+## Documents de références correspondants à ces différentes couches technologiques
 
 - **The Web Platform** : [URI (Uniform Resource Identifier)](http://tools.ietf.org/html/rfc3986)/ [IRI (Internationalized Resource Identifier)](http://tools.ietf.org/html/rfc3987), [HTTP (HyperText Transfer Protocol)](http://tools.ietf.org/html/rfc2616) et [HTML (HyperText Markup Language)](http://www.w3.org/TR/html5/) qui ensemble fournissent la base du web hypertextuel ; [Linked Data](http://linkeddata-specs.info/)
 - **Syntax** : [N3 (Notation 3)](http://www.w3.org/DesignIssues/Notation3)/ [Turtle (Terse RDF Triple Language)](https://www.w3.org/TR/turtle/), [RDFa](http://www.w3.org/TR/rdfa-core/), [XML (Extensible Markup Language)](http://www.w3.org/TR/xml/) et [JSON-LD (JavaScript Object Notation)](http://json-ld.org), [JSON-LD 1.1](https://w3c.github.io/json-ld-syntax/)
@@ -1268,7 +1307,12 @@ cf. https://smiy.wordpress.com/2011/01/10/the-common-layered-semantic-web-techno
 
 Voici une liste de liens pour accéder aux documents de références correspondants à ces différentes couches technologiques
 
+===↓===
 
+## Données liées en résumé :
+
+- The Fitzwilliam Museum. Linked Open Data, what on earth is that? https://www.youtube.com/watch?v=mMR6JQ1M6qE
+- The Fitzwilliam Museum. Linked Open Data: how does it work. https://www.youtube.com/watch?v=0m79yDb4AzE
 
 ===↓===
 
@@ -1409,27 +1453,13 @@ https://iconclassblog.com/2018/01/09/enriching-iconclass-lod-by-linking-keywords
 
 ===↓===
 
-## Web de données culturel, l’ex.  du domaine muséal
+## Web de données culturel, l’exemple du domaine muséal
 
-- Amsterdam Museum
-
-  https://hart.amsterdam/nl/page/12686/amsterdam-museum-en-linked-open-data
-
-- British Museum
-
-  https://collection.britishmuseum.org/resource/About
-
-- British Museum & Research Space
-
-  http://www.researchspace.org
-
-- American Art Collaboratory (AAC) et Linked Art
-
-  http://americanartcollaborative.org, https://linked.art
-
-- Musée du Prado
-
-  https://www.museodelprado.es/en/modelo-semantico-digital/modelo-ontologico
+- Amsterdam Museum https://hart.amsterdam/nl/page/12686/amsterdam-museum-en-linked-open-data
+- British Museum https://collection.britishmuseum.org/resource/About
+- British Museum & Research Space http://www.researchspace.org
+- American Art Collaboratory (AAC) et Linked Art http://americanartcollaborative.org, https://linked.art
+- Musée du Prado https://www.museodelprado.es/en/modelo-semantico-digital/modelo-ontologico
 
 ???
 
@@ -1798,7 +1828,9 @@ Nouvelle expérimentation
 
 ???
 
-Si on avance dans la pile des technologies sémantiques, après Unicode, et XML pour structurer l’information, le modèle RDF est destiné à embarquer la sémantique. Nous verrons ensuite comment introduire de la logique pour interroger les données représentées en RDF avec RDFs et OWL, etc.
+- Donc on avance dans la pile des technologies sémantiques, on va faire un pas.
+- Après Unicode, et XML pour structurer l’information, le modèle RDF nous donne la structure fondamentale qu'on va donner à la connaissance dans le web sem.
+- Nous verrons ensuite comment introduire de la logique et de l'enrichissement sémantique pour interroger les données représentées en RDF, avec RDFs et OWL, etc.
 
 ===↓===
 
@@ -1825,15 +1857,6 @@ https://www.w3.org/standards/techs/rdf#w3c_all
 #### RDF
 
 Structurer les descriptions en informations atomiques sous la forme : sujet verbe prédicat. **RDF est avant tout un modèle de données basées sur des arcs.**
-
-Un exemple un peu plus formel
-
-- La pizza de Tino est une recette de pizza
-- La pizza de Tino a comme ingrédient de la tomate
-- La pizza de Tino a comme ingrédient de la mozarella
-- La pizza de Tino a comme ingrédient des champignons
-- La pizza de Tino est dans la catégorie facile
-- La pizza de Tino est préparée en 20 minutes
 
 #### Comment ne pas être ambigu dans la description ?
 
@@ -1999,15 +2022,15 @@ exemple avec foaf, schema, et Dublin Core
 
 ## Exemple de graphe RDF
 
-x estMortÀ "Paris"
+x estMortÀ "Montréal"
 
-x estMortÀ http://paris
+x estMortÀ http://montreal
 
-http://paris isPartOf France
+http://montreal isPartOf Quebec
 
-http://paris label "Paris"@fr
+http://montreal label "Montréal"@fr
 
-http://paris label "Parigi"@it
+http://montreal label "Montreal"@en
 
 ???
 
@@ -2068,7 +2091,7 @@ Alors que les SGBDR et le langage SQL pour le requêtage et la mise à jour des 
 
 ## Sérialisations de RDF (exemples)
 
-#### application/rdf+xml
+### application/rdf+xml
 
 ```xml
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -2082,7 +2105,7 @@ Alors que les SGBDR et le langage SQL pour le requêtage et la mise à jour des 
 </rdf:RDF>
 ```
 
-#### application/x-turtle, text/turtle
+### application/x-turtle, text/turtle
 
 ```ttl
 sujet predicat objet .
@@ -2105,7 +2128,7 @@ Cette relation de graphe, peut donc s’exprimer de plusieurs manières.
 
 ## Éléments de syntaxe **Turtle**
 
-#### Turtle (Terse RDF Triple Language), abrégé `ttl`
+### Turtle (Terse RDF Triple Language), abrégé `ttl`
 
 **La notation la plus longue se compose de trois *termes* séparés par des espaces et terminées par un `.`**
 
@@ -2179,10 +2202,10 @@ On peut aussi exprimer un nœud vide soit avec un préfixe underscore et un id l
 ## Les relations n-aires
 
 ```
-Emmanuel réside _.
-_ aRue Doudeauville.
-_ aVille Paris.
-_ aPays France.
+David réside _.
+_ aRue desBelges.
+_ aVille Montreal.
+_ aPays Canada.
 ```
 
 ???
@@ -2205,11 +2228,11 @@ Guy réside à une adresse, dans une province, un pays et un code postal. Il va 
 
 On va alors créer des nœuds vides qui sont des nœuds intermédiaires destinés à regrouper des choses. Car la vraie relation est que Guy dispose d’une adresse et que l’ensemble des informations sur l’adresse forme une seule adresse.
 
-```rdf
-Emmanuel réside _.
-_ aRue Doudeauville.
-_ aVille Paris.
-_ aPays France.
+```
+David réside _.
+_ aRue desBelges.
+_ aVille Montreal.
+_ aPays Canada.
 ```
 
 Les *nœuds vides* vont être ajoutés au modèle pour être en mesure d’exprimer autre chose que des relations binaires. Les *nœuds blancs* seront des URIs locales au graphe de sorte que l’on puisse reconstruire le graphe. Personne de l’extérieur pourra y faire référence.
@@ -2228,10 +2251,10 @@ Les relations n-aires sont binarisées via des *nœuds vides (blank nodes)*.
       udem:enseignant
               [ foaf:homepage <http://davidvalentine.ca> ;
                 foaf:name "David Valentine";
-                foaf:Organization "Université de Montréal"
+                foaf:organization "Université de Montréal"
               ] ;
       dc:title "Humanités numériques : Web sémantique et données" ;
-      dc:subject "Ontologie"@fr, "RDF" .
+      dc:subject "Ontologies"@fr, "RDF", "Web sémantique", "Données liées" .
 
 ## même définition pour toutes les simplifications RDF/XML
 ```
@@ -2284,6 +2307,7 @@ Rmq : Format choisi par Schema.org
 
 ## TP Visualiser du RDF
 
+- https://issemantic.net/rdf-visualizer/
 - http://rdfshape.weso.es
 - https://github.com/tdt/rdf2html
 - https://visgraph3.github.io/index.html
