@@ -6,12 +6,13 @@ author:
   - David Valentine
 description: |
   Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et sur la production de requêtes SPARQL.
-date: "2024-06-14"
+date: "2024-06-12"
 tags: [SPARQL]
 presentation: null
 seance: 2
-order: 3
+order: 4
 print: true
+deactivated: true
 ---
 Travail final, à rendre le **le vendredi 28 juin 2024** (50% de la note totale).
 

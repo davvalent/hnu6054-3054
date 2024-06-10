@@ -23,7 +23,6 @@ export const load = async () => {
     })
   );
 
-  console.log(seances);
   seances.sort((a, b) => a.meta.order - b.meta.order);
 
   return {

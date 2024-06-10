@@ -1,6 +1,6 @@
 # HNU 6054-3054
 
-Dépôt des sources du site web.
+Dépôt des sources du site web de l'atelier HNU 6054-3054.
 
 Pour installation :
 
@@ -11,12 +11,8 @@ Pour installation :
 Pour build :
 
 - git checkout deploy
-- git rebase dev
+- git merge dev
 - npm run build
-
-# Outils pédagogiques
-
-- Hypothes.is
 
 # Notes techniques
 
@@ -24,6 +20,4 @@ Voir NOTES.md
 
 ## Branches
 
-- deploy : build seulement sur la branche deploy, car je ne veux pas commiter les builds sur les flows qui se retrouvent dans la branche main; push sur deploy déclenche le déploiement sur GH et sur ntnlv.ca
-
-# Tree
+- deploy : build seulement sur la branche deploy, car je ne veux pas commiter les builds sur les flows qui se retrouvent dans la branche main; push sur deploy déclenche le déploiement

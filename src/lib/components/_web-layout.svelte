@@ -15,15 +15,13 @@ export let layoutData;
 
 let navigationList;
 
-const dateTime = new Date();
-
 function setAriaCurrent(nl) {
 
-console.log(
-  "Dev Informations\n",
-  nl, "\n",
-  document.location
-);
+  console.log(
+    "Dev Informations\n",
+    nl, "\n",
+    "pathname:", document.location.pathname
+  );
 
   // set aria-current attribute
   for (const navigationListItem of nl.children) {
@@ -42,6 +40,7 @@ console.log(
 onMount(() => console.log("Web layout mounted"));
 
 afterUpdate (() => {
+  console.log(document.location.pathname);
   setAriaCurrent(navigationList);
   console.log("DOM updated");
 });
@@ -57,7 +56,7 @@ function foobar() {
   <nav>
     <ul bind:this={navigationList}>
 
-      <li id="{base}/plan-de-cours">
+      <li id="{base}/plan-de-cours/">
         <a href="{base}/plan-de-cours/">Plan de cours</a>
       </li>
 
@@ -65,7 +64,7 @@ function foobar() {
         <a href="{base}/" aria-current="page">HNU6054 Web sémantique et données</a>
       </li>
 
-      <li id="{base}/bibliographie">
+      <li id="{base}/bibliographie/">
         <a href="{base}/bibliographie/">Bibliographie</a>
       </li>
 

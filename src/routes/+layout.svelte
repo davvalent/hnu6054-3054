@@ -12,8 +12,6 @@ import WebLayout from '$lib/components/_web-layout.svelte';
 
 export let data;
 
-console.log("DATA:", data);
-
 let LayoutComponent;
 let printLayout;
 $: LayoutComponent = (printLayout) ? PrintLayout : WebLayout;
