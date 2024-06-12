@@ -35,6 +35,20 @@ onMount(() => {
   <!-- DC -->
   <meta property="dc:title" content="{$page.data.title}" />
   <meta property="dc:date" content="{$page.data.date}" />
+
+  <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "courseCode": "HNU6054",
+        "numberOfCredits": "1",
+        "name": "Humanités numériques : Web sémantique et données",
+        "url": "\/",
+        "description": "Site regroupant les ressources de l’atelier HNU6054 Humanités numériques : Web sémantique et données",
+        "license": "CC BY-NC-SA"
+    }
+  </script>
+    
   
 </svelte:head>
 

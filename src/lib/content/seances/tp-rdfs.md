@@ -1,5 +1,5 @@
 ---
-title: TP RDFs
+title: TP RDFS
 author:
   - Emmanuel
   - David Valentine
@@ -11,7 +11,7 @@ presentation: null
 print: true
 seance: 2
 order: 2
-deactivated: true
+deactivated: false
 ---
 
 <script>
@@ -22,7 +22,8 @@ Téléchargez (clic droit puis "Enregistrer la cible du lien sous" ou équivalen
 
 Modifier le fichier localement avec un éditeur de texte pour y ajouter les informations du tableau suivant associées à des vins qui sont déjà dans le fichier, mais sans autre information.
 
-- Il faut indiquer que le rdf:type de ces éléments est `cb:Wine`.
+- Il faut indiquer que le `rdf:type` de ces éléments est `cb:Wine`.
+- Il faut instancier les propriétés nom, prix et année avec le domaine et la portée pour chacune d’elles.
 - Il faut aussi indiquer les types pour les prix (`xsd:decimal`) et les années (`xsd:gYear`).
 
 | uri          | nom                      | prix  | année |
@@ -31,10 +32,4 @@ Modifier le fichier localement avec un éditeur de texte pour y ajouter les info
 | wc:C00042101 | Riesling Hüge            | 7.95  | 2002  |
 | wc:C00043125 | Domaine de l’Île Margaux | 22.80 | 2004  |
 
-Comment faudrait-il procéder pour
-
-1. Lister les vins (noms, prix et année) en ordre croissant d’année.
-1. Lister les vins (noms, prix et année) en ordre croissant de prix.
-1. Lister les vins (noms, prix et année) en ordre croissant de prix en n’affichant pas les indications de type.
-
-Solutions SPARQL http://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf
+Analyse détaillée par Guy Lapalme : https://www.iro.umontreal.ca/~lapalme/ForestInsteadOfTheTrees/HTML/ch07s01.html
