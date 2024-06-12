@@ -1,0 +1,101 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix cb:      <http://www.iro.umontreal.ca/lapalme/CellarBook#> .
+@prefix wc:      <http://www.iro.umontreal.ca/lapalme/WineCatalog#> .
+
+# Le bloc ci-dessous nous indique que ce cellier contient trois vins.
+# On peut effectivement supposer que ce sont des bouteilles qui sont
+# normalement contenues dans un cellier. Or, l'exemple définit la classe
+# cb:Wine dans la portée (rdfs:range) de la propriété cb:loved, et nous
+# disposons de deux triplets qui déclarent que Jude Raisin aime des vins
+# contenus dans ce cellier. C'est pourquoi il est cohérent, du moins formellement,
+# d'instancier ces vins/bouteilles avec la classe
+# cb:Wine pour leur assigner les propriétés du tableau fourni en annexe.
+# Cela dit, l'exemple instancie une classe cb:Bottle inutilisée dans le graphe,
+# ce qui génère de l'ambiguité dans le modèle. Il s'agit d'un exemple
+# intéressant de problème de modélisation. Dans un modèle que l'on voudrait
+# consistant, on pourrait préciser ce qu'on entend par cb:Wine et cb:Bottle
+# en utilisant par exemple la propriété rdfs:comment.
+
+cb:theCellar
+      cb:ownedBy cb:JudeRaisin ;
+      a       rdf:Bag , cb:Cellar ;
+      rdf:_1  wc:C00043125 ;
+      rdf:_2  wc:C00042101 ;
+      rdf:_3  wc:C00871996 ;
+      cb:locatedAt [ cb:city "Vallée des crus" ;
+                     cb:street "4587 des Futailles"] .
+
+# Ci-dessous, les trois "vins" contenus par le cellar.
+# Dans la syntaxe Turtle, "a" est un raccourci pour rdf:type
+# ^^ nous permet d'indiquer le type de données d'un littéral (valeur sous
+# forme de chaîne de caractères).
+wc:C00871996
+      a cb:Wine ;
+      wc:name "Château Montguérêt"@fr ;
+      wc:vintage "2011"^^xsd:gYear ;
+      wc:format [ a cb:Bottle ;
+                  wc:quantity "75"^^wc:cl ;
+                  wc:price "14.65"^^xsd:decimal ] ,
+                [ a cb:Bottle ;
+                  wc:quantity "1.5"^^wc:L ;
+                  wc:price "25"^^xsd:decimal  ] .
+
+wc:C00042101
+      a cb:Wine ;
+      wc:name "Riesling Hügel" ;
+      wc:price "7.95"^^xsd:decimal ;
+      wc:vintage "2002"^^xsd:gYear .
+
+wc:C00043125
+      a cb:Wine ;
+      wc:name "Domaine de l’Île Margaux"@fr ;
+      wc:price "22.80"^^xsd:decimal ;
+      wc:vintage "2004"^^xsd:gYear .
+
+cb:JudeRaisin cb:city "St-George" ;
+      a cb:Person ;
+      cb:named [ cb:family "Raisin" ;
+                 cb:first "Jude" ] ;
+      cb:loved wc:C00043125 , wc:C00871996  ;
+      cb:comment "this is <b>great</b>!"^^rdf:XMLLiteral ;
+      cb:street "1234 rue des Châteaux" .
+
+# Schema part in RDFS
+# Instanciation des classes
+
+cb:Person a       rdfs:Class .
+cb:Cellar a       rdfs:Class .
+cb:Bottle a       rdfs:Class .
+cb:Wine   a       rdfs:Class .
+
+cb:loved
+      a           rdf:Property ;
+      rdfs:domain cb:Person ;
+      rdfs:range  cb:Wine .
+
+cb:ownedBy
+      a           rdf:Property ;
+      rdfs:domain cb:Cellar ;
+      rdfs:range  cb:Person .
+
+# Instanciation des propriétés avec la classe rdf:Property
+# Remarque : le datatype rdf:XMLLiteral que nous avons utilisé en classe
+# sert à indiquer que la chaîne de caractère utilise la syntaxe XML
+# et que l'objet doit être traité comme tel, ce qui n'est pas le cas
+# dans notre exemple. Nous utiliserons donc la classe rdfs:Literal.
+wc:name
+      a rdf:Property ;
+      rdfs:domain cb:Wine ;
+      rdfs:range  rdfs:Literal . # ou xsd:string pour être plus précis.
+
+wc:price
+      a rdf:Property ;
+      rdfs:domain cb:Wine ;
+      rdfs:range xsd:decimal ;
+
+wc:vintage
+      a rdf:Property ;
+      rdfs:domain cb:Wine ;
+      rdfs:range xsd:gYear .

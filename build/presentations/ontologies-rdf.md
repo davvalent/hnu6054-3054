@@ -2,25 +2,24 @@
 
 # Vocabulaires et ontologies
 Emmanuel Château-Dutier et Antoine Fauchié, mars 2022<br>
-David Valentine, mai 2023
+David Valentine, mai 2023, juin 2024
 
 Site web pour les ressources du cours :  
-[https://davvalent.github.io/hnu6054/](https://davvalent.github.io/hnu6054/)
+[https://davvalent.github.io/hnu6054-3054/](https://davvalent.github.io/hnu6054-3054/)
 
 ===↓===
 
-## Mardi 23 mai 2023, 12h30-15h30 (séance 1.2)
+# Séance 2 : mercredi 12 juin 2024
 
-- Retours sur le TP
-- Vocabulaires structurés et RDFs
-- ex. RDFs
-- Ontologies et OWL
-- ex. FOAF
+- Retour sur la notation Turtle (`.ttl`) et sur la visualisation de données RDF
+- Vocabulaires et ontologies
+- TP RDFS
+- Présentations détaillées des exercices
 
-### Lectures
+## Lectures
 
 - RDF 1.1 Primer, W3C Working Group Note 24 June 2014, http://www.w3.org/TR/rdf11-primer/
-- Bob Ducharme. « Jumping Right In: Some Data and Some Queries. » Learning  SPARQL. Querying and Updating with SPARQL 1.1. 2e édition. O’Reilly,  2013
+- RDF 1.1 Turtle, W3C Recommendation 25 February 2014, https://www.w3.org/TR/turtle/
 
 ???
 
@@ -35,16 +34,16 @@ Rappels sur la dernière séance
 
 # Sommaire
 
-## 1. SKOS et les vocabulaires structurés
-## 2. Ontologies RDFs et OWL
+1. SKOS et les vocabulaires structurés
+1. Ontologies RDFs et OWL
 
 ???
 
-### Notion de schéma, d’ontologie et de vocabulaires
+**Notion de schéma, d’ontologie et de vocabulaires**
 
 Plusieurs standards définis par le W3C sont destinés à déclarer des classes, des propriétés.
 
-### Comment ne pas être ambigu dans la description ?
+**Comment ne pas être ambigu dans la description ?**
 
 - en utilisant un langage commun d’interprétation de cette description (RDF) ;
 - en employant des vocabulaires partagés (SKOS, thésaurus, etc.) ;
@@ -58,24 +57,6 @@ Les ontologies peuvent être alignées, partagées et connectées pour produire 
 
 # 1. SKOS et les vocabulaires structurés
 
-???
-
-### Sur les vocabulaires
-Plusieurs ressources :
-
-- Dalbin, Sylvie, Nathalie Yakovleff, et Hélène Zysman. 2013. « Livre blanc ISO 25964-1 – Thésaurus pour la recherche documentaire ». Livre Blanc. Afnor. Consulté le 25 mars 2022. https://descripteurs.files.wordpress.com/2013/01/iso-25964-livre-blanc-2013-afnor-lb-25964.pdf.
-- ATHENA. 2011. « Votre terminologie comme élément du web sémantique. Recommandations de conception et de management ». ATHENA booklets. Linked Heritage. Consulté le 4 novembre 2020. https://linkedheritage.eu/.
-- http://www.slideshare.net/valexiev1/gvp-lodcidocshort
-- http://www.slideshare.net/mzeng/aat-microthesauri
-
-### Outils de gestion de vocabulaires
-
-[Skos play](http://labs.sparna.fr/skos-play/)
-
-[Ginko](http://www.culturecommunication.gouv.fr/Divers/Harmonisation-des-donnees-culturelles/Referentiels/Les-vocabulaires-scientifiques-et-techniques/L-application-GINCO)
-
-[OpenTheso](https://github.com/miledrousset/opentheso)
-
 ===↓===
 
 ## La pile des technologies du web sémantique
@@ -86,45 +67,46 @@ Plusieurs ressources :
 
 ## Simple Knowledge Organization System (SKOS)
 
-**Famille de langage formels conçus pour la représentation des thesauri, des taxonomies, ou tout autre type de vocabulaire contrôlé, destinée faciliter la publication et la connexion entre des vocabulaires contrôlés pour le web sémantique** 
+Famille de langage formels conçus pour la **représentation des thesauri, des taxonomies**, ou tout autre type de **vocabulaire contrôlé**, destinée faciliter la publication et la connexion entre des vocabulaires contrôlés pour le web sémantique
 
-- extensibilité 
 - modèle de graphe (application de RDF) 
-- fournit des propriétés pour le mapping sémantique entre plusieurs vocabulaires contrôlés 
+- fournit des propriétés pour le l’alignement (mapping) sémantique entre plusieurs vocabulaires contrôlés 
 - offre seulement la structure
+
+???
+
+SKOS est un langage destiné à faciliter la publication, l’échange et l’interconnexion de ces vocabulaires dans le contexte du web sémantique.
+
+Le but de SKOS est de pouvoir récupérer des données produites dans différents contextes, et de les unifier pour pouvoir les réemployer dans l’environnement du web sémantique.
+
+===↓===
+
+## Simple Knowledge Organization System (SKOS)
 
 http://www.w3.org/2004/02/skos/ (2009)
 
 [SKOS](http://www.w3.org/2004/02/skos/ (2009)) est publié par le W3C en août 2009 et la norme ISO 25964 « Thésaurus pour la recherche d’information et interopérabilité avec d’autres vocabulaires » définit des liens avec SKOS (2011 à 2013)
 
-cf. "Évolution des outils d’indexation documentaire des années 1980 aux années 2010." <https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html>
+Voir aussi « [Évolution des outils d’indexation documentaire des années 1980 aux années 2010](https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html)&nbsp;» 
 
 ???
 
-**SKOS est un langage destiné à faciliter la publication, l’échange et l’interconnexion de ces vocabulaires dans le contexte du web sémantique.**
-
 SKOS est un standard publié par le W3C en août 2009 et une norme ISO 25964 « Thésaurus pour la recherche d’information et interopérabilité avec d’autres vocabulaires » (2011 à 2013).
-
-Sa conception est inspirée par des formats ou des guides comme la norme ISO 2788:1986 pour les thésaurus mais n’a pas vocation à les remplacer. 
-
-Le but de SKOS est de pouvoir récupérer des données produites dans différents contextes, et de les unifier pour pouvoir les réemployer dans l’environnement du web sémantique.
-
-cf. "Évolution des outils d’indexation documentaire des années 1980 aux années 2010." <https://www.reseau-canope.fr/savoirscdi/centre-de-ressources/fonds-documentaire-acquisition-traitement/le-traitement-documentaire/evolution-des-outils-dindexation-documentaire-des-annees-1980-aux-annees-2010.html>
 
 ===↓===
 
-## Simple Knowledge Organization System SKOS
+## Simple Knowledge Organization System (SKOS)
 
-[SKOS](http://www.w3.org/2004/02/skos/) est un vocabulaire RDF permettant de décrire des référentiels de type **thésaurus**.
+[SKOS](http://www.w3.org/2004/02/skos/) est un **vocabulaire RDF** permettant de décrire des référentiels de type thésaurus.
 
 - **décrire des concepts** (en utilisant la classe principale, `skos:Concept`) 
 - **exprimer les relations entre ces concepts** (relations hiérarchiques – termes plus spécifiques ou génériques – ou autres – termes en relation).
 - des **propriétés pour décrire des résultats d’alignements** automatiques ou manuels entre des concepts issus de thésaurus distincts (`skos:closeMatch`, `skos:exactMatch`).
 
-#### Ressources
+### Ressources
 
-- Miles, Alistair, et Dan Brickley. 2005. « SKOS Core Guide ». Working Draft. W3C. <https://www.w3.org/TR/swbp-skos-core-guide/>.
-- Isaac, Antoine, et Ed Summers. 2009. « SKOS Simple Knowledge Organization System Primer ». Working Group Note. W3C. <https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/>.
+- Miles, Alistair, et Dan Brickley. 2005. « SKOS Core Guide ». Working Draft. W3C. https://www.w3.org/TR/swbp-skos-core-guide/.
+- Isaac, Antoine, et Ed Summers. 2009. « SKOS Simple Knowledge Organization System Primer ». Working Group Note. W3C. https://www.w3.org/TR/skos-primer/.
 
 ???
 
@@ -146,9 +128,9 @@ SKOS s’adapte à la diversité des systèmes d’organisation des connaissance
 
 ===↓===
 
-## SKOS Simple Knowledge Organisation System
+## SKOS Simple Knowledge Organisation System (SKOS)
 
-| Concepts      | Labels & notation | Documentation | Relations sémantiques | Propriété de mapping | Collections       |
+| Concepts      | Étiquetage | Documentation | Relations sémantiques | Alignement | Collections       |
 | ------------- | :---------------- | ------------- | --------------------- | -------------------- | ----------------- |
 | Concept       | prefLabel         | note          | broader               | broadMatch           | Collection        |
 | ConceptScheme | altLabel          | changeNote    | narrower              | narrowMatch          | orderedCollection |
@@ -214,7 +196,11 @@ De nombreux éléments définis par SKOS concernent la documentation.
 
 ===↓===
 
-<!-- .slide: data-background="images/skosCore.png" data-background-size="contain" -->
+## SKOS : un modèle de graphe RDF
+
+![SKOS Core](images/skosCore.png)
+
+https://www.w3.org/TR/swbp-skos-core-guide/
 
 ???
 
@@ -241,7 +227,7 @@ skos: http://www.w3.org/2004/02/skos/core#
 
 <!-- .slide: data-background="images/skossRameau.png" data-background-size="contain" -->
 
-Deux concepts de Rameau représentés sous forme de graphe RDF/SKOS
+## Deux concepts de Rameau représentés sous forme de graphe RDF avec SKOS
 
 ???
 
@@ -257,15 +243,15 @@ http://www.few.vu.nl/~aisaac/
 
 ===↓===
 
-## Thesaurus
+## Thesaurus :
 
-> vocabulaire contrôlé et structuré dans lequel les concepts sont représentés par des termes, et organisés de manière à rendre explicite les relations entre les concepts les termes préférentiels sont accompagnés de synonymes ou quasi-synonymes
+> vocabulaire contrôlé et structuré dans lequel les concepts sont représentés par des termes, et organisés de manière à rendre explicite les relations entre les concepts [...] les termes préférentiels sont accompagnés de synonymes ou quasi-synonymes
 
 - on distingue les thésaurus des autres types de vocabulaires contrôlés
 - une norme adaptée aux évolutions des systèmes d’information
 - une norme en phase avec le web sémantique et ses standards
 
-[norme ISO 25964](https://www.iso.org/fr/standard/53657.html)
+[Norme ISO 25964](https://www.iso.org/fr/standard/53657.html)
 
 - partie 1 : thésaurus pour la recherche documentaire (2011)
 - partie 2 : interopérabilité avec des vocabulaires (2013)
@@ -305,21 +291,17 @@ souvent utilisés pour les documents techniques ou dans des domaines spéciali
 
 ## Exemples de thesaurus
 
-- **Icon Class** (iconographic description) 
-
-<http://www.iconclass.org/>
-
-- **Getty Art and Architecture thesaurus** (AAT) 
-
-<http://www.getty.edu/research/conducting_research/vocabularies/aat/>
-
-- **Getty Union List of Artist** (ULAN) 
-
-<http://www.getty.edu/research/conducting_research/vocabularies/ulan/>
-
-- **Getty Thesaurus of Geographical Names** (TGN) 
-
-<http://www.getty.edu/research/conducting_research/vocabularies/tgn>
+- TaDiRAH: Taxonomy of Digital Research Activities in the Humanities
+  - https://vocabs.dariah.eu/tadirah/en/
+  - https://tadirah.info
+- Icon Class (iconographic description) 
+  - http://www.iconclass.org
+- Getty Art and Architecture Thesaurus (AAT) 
+  - http://www.getty.edu/research/conducting_research/vocabularies/aat/
+- Getty Union List of Artist (ULAN) 
+  - http://www.getty.edu/research/conducting_research/vocabularies/ulan/
+- Getty Thesaurus of Geographical Names (TGN) 
+  - http://www.getty.edu/research/conducting_research/vocabularies/tgn/
 
 ===↓===
 
@@ -335,36 +317,62 @@ https://schema.org
 
 https://doremus-anr.github.io/schema-visualizer/
 
+???
+
+- Il y a d'autres vocabulaires RDF pour nous permettre de structurer d'autres types d'informations
+- Par exemple, schema.org pour structurer les informations qui décrivent des éléments du web
+- Exemple notre site
+
+**Suite**
+
+- Maintenant on va voir comment on peut créer nos propres modèles, avec notre propre terminologie et nos propres idées
+- donc RDFS et la notion d'ontologie
+
+===↓===
+
+## Ressources sur les vocabulaires
+
+- Dalbin, Sylvie, Nathalie Yakovleff, et Hélène Zysman. 2013. « Livre blanc ISO 25964-1 – Thésaurus pour la recherche documentaire ». Livre Blanc. Afnor. Consulté le 25 mai 2024. https://descripteurs.files.wordpress.com/2013/01/iso-25964-livre-blanc-2013-afnor-lb-25964.pdf.
+- [Getty Vocabulary Program LOD: Ontologies and Semantic Representation](http://www.slideshare.net/valexiev1/gvp-lodcidocshort)
+- [AAT LOD Microthesauri](http://www.slideshare.net/mzeng/aat-microthesauri)
+
+## Outils de gestion de vocabulaires
+
+- Skos Play : http://labs.sparna.fr/skos-play/
+- Ginco : https://github.com/culturecommunication/ginco
+- OpenTheso : https://github.com/miledrousset/Opentheso2
+
 ===→===
 
-# 2. Ontologies (RDFs et OWL)
+# 2. Ontologies (RDFS et OWL)
 
 ===↓===
 
 ## Les ontologies
 
-une description formelle explicite des concepts partagés dans un domaine donné et des relations entre ces concepts
+Description formelle explicite des concepts partagés dans un domaine donné et des relations entre ces concepts.
 
-- contient des définitions lisibles en machine des concepts (classes) et de leurs relations
+- contient des définitions lisibles en machine des concepts (**classes**) et de leurs relations (**propriétés**)
 - caractéristiques et attributs du concepts (rôles ou propriétés)
 - restrictions sur les attributs (facettes ou restrictions de rôles)
-- permet de formuler des raisonnements
+- permet de formuler des raisonnements (inférence)
 
 une ontologie définit **une conceptualisation commune** pour une communauté qui a besoin de partager l’information dans un certain domaine
 
 ???
 
-En sciences de l’informatique, une ontologie est une spécification formelle d'un modèle conceptuel lisible par la machine dans laquelle les concepts, propriétés, relations, fonctions, contraintes et axiomes sont explicitement définis
+En informatique, une ontologie est une spécification formelle d'un modèle conceptuel lisible par la machine dans laquelle les concepts, propriétés, relations, fonctions, contraintes et axiomes sont explicitement définis
 
 - pas un vocabulaire contrôlé proprement dit
 - mais peut en employer un ou plusieurs
+- on va exprimer des relations plus complexes
 
 Une description formelle explicite des concepts partagés dans un domaine donné et des relations entre ces concepts
 
 - contient des définitions lisibles en machine des concepts (classes) et de leurs relations
 - caractéristiques et attributs du concepts (rôles ou propriétés)
 - restrictions sur les attributs (facettes ou restrictions de rôles)
-- permet de formuler des raisonnements
+- permet de formuler des raisonnements (inférence), grâce à la logique inhérente des déclarations du modèles.
 
 **une ontologie définit une conceptualisation commune pour une communauté qui a besoin de partager l’information dans un certain domaine**
 
@@ -378,7 +386,7 @@ Une description formelle explicite des concepts partagés dans un domaine donne
 
 ???
 
-### Notion d’ontologie
+**Notion d’ontologie**
 
 Une ontologie est un ensemble de déclarations descriptives explicites à propos du monde (habituellement référée comme le domaine d’intérêt ou le sujet de l’ontologie). Par leur caractère explicite, ces descriptions satisfont plusieurs fonctions :
 
@@ -391,7 +399,7 @@ http://tomgruber.org/writing/onto-design.htm
 
 ===↓===
 
-> An ontology is an explicit, formal specification of a shared conceptualization. (Thomas R. Gruber, 1993)
+<!-- > An ontology is an explicit, formal specification of a shared conceptualization. (Thomas R. Gruber, 1993)
 
 > […] ontologies are defined as a formal specification of a shared conceptualization. (Borst, 1997)
 
@@ -399,23 +407,31 @@ http://tomgruber.org/writing/onto-design.htm
 > Conceptualization refers to an abstract model of some phenomenon in the world by having identified the relevant concepts of that phenomenon.
 > Explicit means that the type of concepts used, and the constraints on their use are explicitly defined.
 > Formal refers to the fact that the ontology should be machine readable.
-> Shared reflects the notion that an ontology captures consensual knowledge, that is, it is not private of some individual but accepted by a group. (Studer, 1998)
+> Shared reflects the notion that an ontology captures consensual knowledge, that is, it is not private of some individual but accepted by a group. (Studer, 1998) -->
+
+## Onotlogies : caractéristiques
+
+- Conceptuatlisation : modèle abstrait du domaine et ses expressions
+- Spécification : propre à un domaine
+- Explicite : la sémantique de toutes les expressions est claire
+- Formelle : lisible par la machine
+- Partagé : consensus dans une communauté
 
 ???
 
-Il faut ici souligner plusieurs notions : 
+Il faut ici souligner plusieurs notions. L'ontologie est une :
 
 - Conceptuatlisation : modèle abstrait du domaine et ses expressions en rapport
 - Spécification : relative à un domaine
 - Explicite : la sémantique de toutes les expressions est claire
 - Formelle : lisible par la machine
-- Shared : consensus dans une communauté
+- Paratagée : consensus dans une communauté
 
 En somme, il s’agit de produire :
 
 - langage commun (symboles, expressions) —> syntaxe
-- signification des symboles et expressions claires —> sémantiques
-- les symboles et expressions de sémantique similaire sont groupés en classes —> conceptualisation
+- une signification claire des symboles et des expressions —> sémantiques
+- les symboles et expressions de sémantique similaire sont regroupés en classes —> conceptualisation
 - les concepts sont organisés de manière hiérarchique —> taxonomie
 - du savoir implicite peut être rendu explicite —> raisonnement
 
@@ -423,7 +439,7 @@ cf. https://fr.slideshare.net/UMR7324/therese-libourel-ontologiesshs20151109tour
 
 https://keet.wordpress.com/2017/01/20/on-that-shared-conceptualization-and-other-definitions-of-an-ontology/
 
-### Biblio
+**Biblio**
 
 - Doerr, Martin, Stefan Gradmann, Steffen Hennicke, Antoine Isaac, Carlo Meghini, et Herbert van de Sompel. 2010. « The Europeana Data Model (EDM) ». Dans *Subject Analysis and Access*. . Gothenburg, Sweden : IFLA. https://www.ifla.org/past-wlic/2010/149-doerr-en.pdf.
 - Oldman, Dominic. 2014. « The CIDOC Conceptual Reference Model (CIDOC-CRM): PRIMER | CIDOC CRM ». CIDOC. Consulté le 19 mars 2021. http://www.cidoc-crm.org/Resources/the-cidoc-conceptual-reference-model-cidoc-crm-primer.
@@ -432,12 +448,12 @@ https://keet.wordpress.com/2017/01/20/on-that-shared-conceptualization-and-other
 
 ===↓===
 
-## RDF Schema (RDFs)
+## RDF Schema (RDFS)
 
 - Premier brouillon du W3C en avril 1998
 - Recommandation en février 2004
 
-#### **RDF Schema** définit **un modèle de données** pour la création de déclarations RDF.
+### RDF Schema définit un **modèle de données** pour la création de déclarations RDF
 
 ### Le vocabulaire autorise :
 
@@ -452,23 +468,23 @@ https://keet.wordpress.com/2017/01/20/on-that-shared-conceptualization-and-other
 
 Les ontologies peuvent être définies au moyen des standards RDF Schema (RDFs) et du Web Ontology Language (OWL).
 
-Ces formats peuvent contenir à la fois des définitions informelles sous la forme de documentation pour les humains et des descriptions formelles sous la forme de règles et de contraintes qui permettent de détecter des inconsistances ou de dériver de nouveaux faits à partir d’assertions explicites.
+Ce sont des modèles qui peuvent contenir à la fois des définitions informelles sous la forme de documentation pour les humains et des descriptions formelles sous la forme de règles et de contraintes qui permettent de détecter des incohérences ou de dériver de nouveaux faits à partir d’assertions explicites.
 
 Une ontologie peut, par exemple, définir des classes pour des livres, des peintures, des tableaux et des personnes, une propriété d’auteur, et déclarer formellement que toutes les ressources connectées aux livres par la propriété auteur sont de type personne.
 
 Pour en savoir plus sur les ontologies : https://fr.slideshare.net/SergeLinckels/semantic-web-ontologies-212812210
 
-## RDFs
+**RDFs**
 
 <!-- Depuis la dernière séance, on vous vend l’idée que le web sémantique nous permettrait de faire des déductions à partir de faits documentés. Toutefois, jusqu’ici on n’a pas fait grand chose. On s’est contenté de combiner des requêtes, etc. Les seules déductions que l’on ait faites consistaient à savoir dire si x est marié a y, etc. -->
 
-Pour pouvoir formuler ce genre de déductions, nous allons avoir besoin de pouvoir intégrer plus de sémantique. C’est ce que va permettre RDFs en introduisant les notions de classes et de propriétés.
+Pour pouvoir formuler ce genre de déductions, nous allons avoir besoin de pouvoir intégrer plus de sémantique. C’est ce que va permettre RDFs.
 
-RDFs est un **vocabulaire pour la modélisation** de données RDF sépcifié par le W3C à partir de 2014. La version courante est la 1.1 qui date de 2014. 
+Donc RDFs est un **vocabulaire pour la modélisation** de données RDF sépcifié par le W3C à partir de 2014. La version courante est la 1.1 qui date de 2014.
 
 https://www.w3.org/TR/rdf-schema/
 
-**Il s’agit de quelque chose de bâti par-dessus RDF.** Avec RDFs, il sera possible de définir les notions de classe, d’instances de classes et de spécifier les relations entre ces classes par des propriétés.
+**Il s’agit de quelque chose de bâti par-dessus RDF.** Avec RDFs, il sera possible de définir les notions de classe, d’instances de classes et de spécifier les relations entre les membres de ces classes grâce à des propriétés.
 
 - Classes
 - Instances
@@ -476,22 +492,23 @@ https://www.w3.org/TR/rdf-schema/
 
 ===↓===
 
-## La représentation des connaissances en RDF
+## La représentation des connaissances en RDFS
 
 - toute information est encodée comme un triplet
 - un fait complexe est encodé comme une conjonction de triplets élémentaires
-- on ne peut exprimer la négation ou la disjonction
 - on peut déduire des nouvelles informations à l’aide d’un processus d’implication (*entailment*)
 
-### `rdf:type`
+Pour ce faire, il faut procéder au typage des ressources.
 
-Instancier une ressource en RDF avec `rdf:type` :
+### Le typage avec la propriété `rdf:type`
 
-`:David rdf:type :Enseignant .`
+Instancier une classe en RDF avec `rdf:type` et `rdfs:Class` :
 
-Instancier une classe en RDF avec `rdf:type` :
+- `:Enseignant rdf:type rdfs:Class .`
 
-`:Enseignant rdf:type rdf:Class .`
+Instancier une ressource en tant que membres d’une classe avec `rdf:type` :
+
+- `:David rdf:type :Enseignant .`
 
 ???
 
@@ -505,7 +522,7 @@ En RDF, toutes les ressources disposent d’un type (ou plusieurs) appelé *clas
 
 - type sert à instancier les classes ou les ressources
 - les entités d’une même classe partagent des propriétés
-- lasses peuvent être organisées en hiérarchies (classes, sous-classes)
+- les classes peuvent être organisées en hiérarchies (classes, sous-classes) pour bénéficier des mécanismes d'implications
 
 `rdf:type`, `rdfs:Class`, `rdfs:subClassOf`
 
@@ -518,22 +535,27 @@ En RDF, toutes les ressources disposent d’un type (ou plusieurs) appelé *clas
 
 ===↓===
 
-## Vocabulaire RDFs, les **Classes**
+## Vocabulaire RDFS : les classes
 
-### `rdf:Class`
-concept de classe, définit un objet abstrait qui est appliqué avec `rdf:type` pour créer des instances
+### `rdfs:Class`
+
+Concept de classe, définit un objet abstrait utilisé avec `rdf:type` pour créer des instances (membres d’une classe).
 
 ### `rdf:Property`
-classe de base pour les propriétés
+
+Classe pour l’instanciation des propriétés.
 
 ### `rdfs:Resource`
-toutes les entités du modèle RDF sont instances de cette classe
+
+Toutes les entités décrites en RDF sont instances de cette classe.
 
 ### de plus :
 
 `rdf:Datatype`, `rdf:XMLLiteral`, `rdfs:Container`, `rdfs:ContainerMembershipProperty`.
 
 ???
+
+Les termes plus en détail
 
 Poursuivre avec David et enseignant.
 
@@ -543,23 +565,17 @@ Poursuivre avec David et enseignant.
 
 ### Classes fondamentales
 
-- `rdfs:Resource`
-- `rdfs:Class`
-- `rdfs:Literal, rdf:XMLLiteral`
-- `rdfs:Property`
+`rdfs:Resource`, `rdfs:Class`, `rdfs:Literal`, `rdfs:Property`
 
-### Relations
+### Propriétés
 
-- `rdf:type`
-- `rdfs:subClassOf`
-- `rdfs:subPropertyOf`
-
-Type et liens entre les propriétés et des classes
+- `rdf:type` (relation d'instance)
+- `rdfs:subClassOf`, `rdfs:subPropertyOf` (relation de subsomption)
 
 #### Pour les propriétés
 
-- `rdfs:domain` (dont les ressources peuvent être sujet)
-- `rdfs:range` (dont les ressource peuvent être objet)
+- `rdfs:domain` (spécifie une propriété dont les ressources peuvent être sujet)
+- `rdfs:range` (spécifie une propriété dont les ressources peuvent être objet)
 
 ???
 
@@ -572,24 +588,28 @@ Type et liens entre les propriétés et des classes
 
 ## Classes et propriétés pour les conteneurs et les collections de ressources
 
-#### Container
+### Container
 
 - `rdf:Bag`, `rdf:Seq`, `rdf:Alt`
 - `rdf:List`, `rdf:first`, `rdf:rest`
 - `rdfs:Container`, `rdfs:ContainerMembershipProperty`, `rdfs:member`
 
-#### Autres propriétés auxiliaires (documentation pour les humains, pas de sémantique associée)
+### Autres propriétés auxiliaires (documentation pour les humains, pas de sémantique associée)
 
 - `rdf:seeAlso` (lien vers une autre propriété qui l’explique)
 - `rdfs:isDefinedBy`
 - `rdfs:comment`
 - `rdfs:label`
 
+Pour en savoir plus, voir [RDF Schema 1.1](https://www.w3.org/TR/rdf11-schema/)
+
 ???
+
+Parler de label.
 
 ### Containers
 
-On peut aussi construire par dessus RDF un certain nombre de structures avec les *containers*. Ici on reste dans RDF. Pour le moment, on se contentait de dire que l’on avait des relations entre a et b. Mais si veut dire que l’on a un cours et que des étudiants font partie de ce cours là, et que ce cours là, c’est l’ensemble de ses étudiants. Comme il s’agit de cas de figure courants, on a défini en RDF des containers pour prendre en charge ces cas-là.
+On peut aussi construire par dessus RDF un certain nombre de structures avec les *containers*. Ici on reste dans RDF. Pour le moment, on se contentait de dire que l’on avait des relations entre a et b. Mais si veut dire que l’on a un cours et que des étudiants font partie de ce cours là, et que ce cours là, c’est l’ensemble de ses étudiants. Comme il s’agit de cas de figure courant, on a défini en RDF des containers pour prendre en charge ces cas-là.
 
 Un type prédéfini destiné à exprimer le fait qu’on ait un ensemble d’étudiants. Ce qui dit que c’est un container, c’est que son type, l’URI de RDF bag.
 
@@ -643,21 +663,28 @@ https://www.w3.org/TR/rdf11-primer/
 
 ===↓===
 
+## Exemple : classes du domaine des véhicules
+
 ```turtle
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix ex: <http://www.example.org/schemas/vehicles#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
 # Classes
 ex:MotorVehicle rdf:type rdfs:Class .
+
 ex:PassengerVehicle
 	rdf:type rdfs:Class ;
     rdfs:subClassOf ex:MotorVehicle .
+
 ex:Truck
       rdf:type rdfs:Class ;
       rdfs:subClassOf ex:MotorVehicle .
+
 ex:Van
       rdf:type rdfs:Class ;
       rdfs:subClassOf ex:MotorVehicle .
+
 ex:MiniVan
       rdf:type rdfs:Class ;
       rdfs:subClassOf ex:PassengerVehicle , ex:Van .
@@ -745,11 +772,12 @@ Section RDF comme telle, qui formalise qui structure un ensemble de déclaration
 
 ## TP RDFs
 
-Téléchargez le fichier suivant https://davvalent.github.io/hnu6054/exercices/CBWC-RDF-S.ttl
+Téléchargez le fichier suivant https://davvalent.github.io/hnu6054-3054/exercices/CBWC-RDF-S.ttl
 
 Modifiez le fichier pour y ajouter les informations du tableau suivant associées à des vins qui sont déjà dans le fichier, mais sans autre information.
 
-- Il faut indiquer que le rdf:type de ces éléments est `cb:Bottle`.
+- Il faut indiquer que le `rdf:type` de ces éléments est `cb:Wine`.
+- Il faut instancier les propriétés nom, prix et année avec le domaine et la portée pour chacune d’elles.
 - Il faut aussi indiquer les types pour les prix (`xsd:decimal`) et les années (`xsd:gYear`).
 
 | uri          | nom                      | prix  | année |
@@ -758,13 +786,7 @@ Modifiez le fichier pour y ajouter les informations du tableau suivant associée
 | wc:C00042101 | Riesling Hüge            | 7.95  | 2002  |
 | wc:C00043125 | Domaine de l’Île Margaux | 22.80 | 2004  |
 
-Comment faudrait-il procéder pour
-
-1. Lister les vins (noms, prix et année) en ordre croissant d’année.
-1. Lister les vins (noms, prix et année) en ordre croissant de prix.
-1. Lister les vins (noms, prix et année) en ordre croissant de prix en n’affichant pas les indications de type.
-
-Solutions SPARQL http://www.iro.umontreal.ca/~lapalme/ift6281/RDF/ExerciceRDF.pdf
+Analyse détaillée par Guy Lapalme : https://www.iro.umontreal.ca/~lapalme/ForestInsteadOfTheTrees/HTML/ch07s01.html
 
 ===↓===
 
@@ -1047,25 +1069,16 @@ https://ckan.org
 
 ## Discussion
 
-### **Quelles opportunités pour le domaine éditorial ?**
+### Quelles opportunités pour les humanités numériques?
 
-Et les humanités numériques?
-
---
-
-- Quelles conséquences sur le format livre ?
-
---
-
-- Quelles sources de données pourraient être utiles ?
-
---
-
-- Quels types d’applications possibles ?
+- Quelles conséquences sur le format livre?
+- Quelles conséquences sur le document d'archive?
+- Quelles sources de données pourraient être utiles?
+- Quels types d’applications possibles?
 
 ===↓===
 
-## Biblio
+## Bibliographie
 
 - Allemang, Dean, James A Hendler, et Fabien Gandon. 2020. *Semantic web for the working ontologist: effective modeling for linked data, RDFS, and OWL*.
 - Doerr, Martin. 2009. Ontologies for Cultural Heritage. *Handbook on Ontologies.* p. 463-486. DOI : 10.1007/978-3-540-92673-3
@@ -1076,7 +1089,7 @@ Et les humanités numériques?
 
 ===↓===
 
-## Lectures muséologie, culture
+## Lectures muséologie et culture
 
 - Bermès, Emmanuelle dir. 2013. *Le Web sémantique en bibliothèque*. « Bibliothèques ». Paris : Édition du Cercle de la Librairie. ISBN 9782765414179
 - Eero Hyvönen. 2012. *Publishing and Using Cultural Heritage Linked Data on the Semantic Web.* Synthesis Lectures on semantic web : Theory and technology. Morgan & Claypool publishers. ISBN 1608459985
