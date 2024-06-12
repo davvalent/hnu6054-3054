@@ -12,7 +12,7 @@ presentation: null
 seance: 2
 order: 4
 print: true
-deactivated: true
+deactivated: false
 ---
 Travail final, à rendre le **le vendredi 28 juin 2024** (50% de la note totale).
 
