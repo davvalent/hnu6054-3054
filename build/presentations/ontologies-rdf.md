@@ -61,7 +61,7 @@ Les ontologies peuvent être alignées, partagées et connectées pour produire 
 
 ## La pile des technologies du web sémantique
 
-![](images/sw_layercake.png)
+![La pile des technologies du web sémantique](images/sw_layercake.png)
 
 ===↓===
 
@@ -142,13 +142,13 @@ SKOS s’adapte à la diversité des systèmes d’organisation des connaissance
 
 ???
 
-- SKOS c'est un modèle du web sem, qui a basé sur RDF, que l'on utilise pour représenter des vocabualires controlés
-- Et que l'on utilise pour aligner ces vocabulaires entre eux
+- SKOS c’est un modèle du web sem, qui a basé sur RDF, que l’on utilise pour représenter des vocabualires controlés
+- Et que l’on utilise pour aligner ces vocabulaires entre eux
 - Les concepts et les relations décrites seront identifiés par des URI
-- C'est un modèle spécifiquement concu
+- C’est un modèle spécifiquement concu
   - pour représenter des vocabulaires contrôlés,
   - et pour faciliter la réutilisation dans différents contextes, dans différentes applications.
-- J'attire votre attention sur les propriétés de mapping
+- J’attire votre attention sur les propriétés de mapping
 
 ### Autre
 
@@ -262,7 +262,7 @@ http://www.few.vu.nl/~aisaac/
 
 lexique, ensemble fermé de termes de description (motset expression) soigneusement choisis pour un domaine accompagnés de leurs définitions précises
 
-utilisés pour étiqueter des documents de manière à ce qu'ils soient plus facilement repérables lors d'une recherche
+utilisés pour étiqueter des documents de manière à ce qu’ils soient plus facilement repérables lors d’une recherche
 
 Résoudre des problèmes : 
 
@@ -319,14 +319,14 @@ https://doremus-anr.github.io/schema-visualizer/
 
 ???
 
-- Il y a d'autres vocabulaires RDF pour nous permettre de structurer d'autres types d'informations
+- Il y a d’autres vocabulaires RDF pour nous permettre de structurer d’autres types d’informations
 - Par exemple, schema.org pour structurer les informations qui décrivent des éléments du web
 - Exemple notre site
 
 **Suite**
 
 - Maintenant on va voir comment on peut créer nos propres modèles, avec notre propre terminologie et nos propres idées
-- donc RDFS et la notion d'ontologie
+- donc RDFS et la notion d’ontologie
 
 ===↓===
 
@@ -361,7 +361,7 @@ une ontologie définit **une conceptualisation commune** pour une communauté qu
 
 ???
 
-En informatique, une ontologie est une spécification formelle d'un modèle conceptuel lisible par la machine dans laquelle les concepts, propriétés, relations, fonctions, contraintes et axiomes sont explicitement définis
+En informatique, une ontologie est une spécification formelle d’un modèle conceptuel lisible par la machine dans laquelle les concepts, propriétés, relations, fonctions, contraintes et axiomes sont explicitement définis
 
 - pas un vocabulaire contrôlé proprement dit
 - mais peut en employer un ou plusieurs
@@ -411,15 +411,15 @@ http://tomgruber.org/writing/onto-design.htm
 
 ## Onotlogies : caractéristiques
 
-- Conceptuatlisation : modèle abstrait du domaine et ses expressions
+- Conceptuatlisation : modèle abstrait d’un domaine et ses expressions
 - Spécification : propre à un domaine
-- Explicite : la sémantique de toutes les expressions est claire
-- Formelle : lisible par la machine
-- Partagé : consensus dans une communauté
+- Modèle explicite : la sémantique de toutes les expressions est claire
+- Modèle formel : lisible par la machine
+- Modèle partagé : consensus dans une communauté
 
 ???
 
-Il faut ici souligner plusieurs notions. L'ontologie est une :
+Il faut ici souligner plusieurs notions. L’ontologie est une :
 
 - Conceptuatlisation : modèle abstrait du domaine et ses expressions en rapport
 - Spécification : relative à un domaine
@@ -522,7 +522,7 @@ En RDF, toutes les ressources disposent d’un type (ou plusieurs) appelé *clas
 
 - type sert à instancier les classes ou les ressources
 - les entités d’une même classe partagent des propriétés
-- les classes peuvent être organisées en hiérarchies (classes, sous-classes) pour bénéficier des mécanismes d'implications
+- les classes peuvent être organisées en hiérarchies (classes, sous-classes) pour bénéficier des mécanismes d’implications
 
 `rdf:type`, `rdfs:Class`, `rdfs:subClassOf`
 
@@ -549,7 +549,7 @@ Classe pour l’instanciation des propriétés.
 
 Toutes les entités décrites en RDF sont instances de cette classe.
 
-### de plus :
+### De plus :
 
 `rdf:Datatype`, `rdf:XMLLiteral`, `rdfs:Container`, `rdfs:ContainerMembershipProperty`.
 
@@ -569,7 +569,7 @@ Poursuivre avec David et enseignant.
 
 ### Propriétés
 
-- `rdf:type` (relation d'instance)
+- `rdf:type` (relation d’instance)
 - `rdfs:subClassOf`, `rdfs:subPropertyOf` (relation de subsomption)
 
 #### Pour les propriétés
@@ -712,7 +712,9 @@ Analyse en groupe
 
 ???
 
-Domaine et portée pour la suite de l'analyse en groupe
+Domaine et portée pour la suite de l’analyse en groupe.
+
+Diapo à réviser.
 
 ===↓===
 
@@ -747,7 +749,7 @@ ex:johnSmithsCar
 
 - ici introduit une classe personne avec une série de propriétés
 - introduire la notation pour les datatypes ^^
-- Fin de l'analyse avec l'instanciation des propriétés et d'une ressource de la classe PassengerVehicle.
+- Fin de l’analyse avec l’instanciation des propriétés et d’une ressource de la classe PassengerVehicle.
 
 ===↓===
 
@@ -759,7 +761,7 @@ http://www.iro.umontreal.ca/~lapalme/ForestInsteadOfTheTrees/HTML/ch07s01.html
 
 Section RDFs, qui définit le schéma de données
 
-Le modèle s'articule autour de :
+Le modèle s’articule autour de :
 
 - trois classes
 - deux propriétés
@@ -792,13 +794,25 @@ Analyse détaillée par Guy Lapalme : https://www.iro.umontreal.ca/~lapalme/Fore
 
 ## Web Ontology Language (OWL)
 
-Est un langage de schéma ou un langage de représentation de la connaissance du web sémantique. OWL permet de définir des concepts de manière à pouvoir les réutiliser. 
+> OWL est un langage de schéma ou un langage de représentation de la connaissance du web sémantique. OWL permet de **définir des concepts** de manière à pouvoir les réutiliser. Ainsi, chaque concept peut être soigneusement défini pour qu’il puisse **être sélectionné et assemblé dans diverses combinaisons avec d’autres concepts** selon les besoins pour de nombreuses applications et objectifs différents.
 
-<http://www.w3.org/TR/owl2-overview/>
+https://cambridgesemantics.com/blog/semantic-university/intro-semantic-web/
 
-<http://www.w3.org/TR/owl2-primer/>
+OWL est :
+
+- un langage déclaratif pour exprimer des ontologies
+- mais plus riche que RDFs
+- implémente des éléments de la **logique de description** pour produire des inférences
+
+Voir [What is OWL 2?](https://www.w3.org/TR/owl2-primer/#What_is_OWL_2.3F)
 
 ???
+
+**Principe :** un langage déclaratif pour exprimer des ontologies. Il ne s’agit pas d’un langage de schéma, et c’est un monde ouvert, ce qui change la façon de faire des preuves.
+
+En OWL on se retrouve avec des axiomes, cad un ensemble d’énoncés de base supposés vrais. On a également des entités qui font référence à… Puis des expressions. L’ensemble formant une ontologie.
+
+On y trouvera des énoncés de base et on parlera de conséquences des énoncés. On exprime des relations entre des énoncés, ensuite pourra voir si un énoncé a est vrai si d’autres A le sont. A entraîne (entails) a. Alors on dira que A est consistant si une situation où tous ses énoncés sont vrais.
 
 > **OWL (Web Ontology Language):** The schema language, or knowledge representation (KR) language, of the Semantic Web. OWL enables you to define concepts composably so that these concepts can be reused as much and as often as possible. Composability means that each concept is carefully defined so that it can be selected and assembled in various combinations with other concepts as needed for many different applications and purposes
 
@@ -812,30 +826,23 @@ Différences entre SKOS et OWL
 
 ## OWL Web Ontology Language
 
-https://www.w3.org/standards/techs/owl#w3c_all
-
-- un langage déclaratif pour exprimer des ontologies.
-- plus riche que RDFs
-
-Modélisation de base : 
+### Modélisation de base
 
 - classes et instances
 - hiérarchies de classes
-- propriétés d’objects
+- propriétés d’objects ou de données
 - hiérarchies de propriétés
-- Restrictions sur les propriétés
+- restrictions sur les propriétés
 - égalité des individus
 - types des valeurs de propriétés
 
-cf. https://www.w3.org/TR/owl2-primer/
+### Ressources
+
+- http://www.w3.org/TR/owl2-overview/
+- http://www.w3.org/TR/owl2-primer/
+- https://www.w3.org/TR/?filter-tr-name=owl
 
 ???
-
-**Principe :** un langage déclaratif pour exprimer des ontologies. Il ne s’agit pas d’un langage de schéma, et c’est un monde ouvert, ce qui change la façon de faire des preuves.
-
-En OWL on se retrouve avec des axiomes, cad un ensemble d’énoncés de base supposés vrais. On a également des entités qui font référence à… Puis des expressions. L’ensemble formant une ontologique.
-
-On y trouvera des énoncés de base et on parlera de conséquences des énoncés. On exprime des relations entre des énoncés, ensuite pourra voir si un énoncé a est vrai si d’autres A le sont. A entraîne (entails) a. Alors on dira que A est consistant si une situation où tous ses énoncés sont vrais.
 
 **Modélisation de base :** être capable de définir des classes, des sous-classes, des propriétés et des sous-propriétés, des restrictions sur des propriétés, etc. Série d’éléments qui correspondent un peu à ce que peut faire avec RDFs mais plus riche
 
@@ -847,7 +854,7 @@ On y trouvera des énoncés de base et on parlera de conséquences des énoncés
 - égalité des individus
 - types des valeurs de propriétés
 
-**Ensuite relations avancées de classes :** définition de classes complexes, restrictions de propriétés (ex famille nombreuse, plus de x individus enfants), mais aussi de cardinalice, énumérations d’individus. Choses qui s’expriment aussi en logique de premier ordre.
+**Ensuite relations avancées de classes :** définition de classes complexes, restrictions de propriétés (ex famille nombreuse, plus de x individus enfants), mais aussi de cardinalité, énumérations d’individus. Choses qui s’expriment aussi en logique de premier ordre, en fait dans un sous-ensemble de la logique des prédicats du premier ordre appelé la logique de descriprition.
 
 - classes complexes
 - restrictions de propriétés
@@ -864,15 +871,13 @@ On y trouvera des énoncés de base et on parlera de conséquences des énoncés
 
 ## Classes
 
-Les classes groupent tous les individus qui partagent des propriétés pour y faire référence. Les classes représentent ainsi essentiellement des ensembles d’individus. 
+Les classes regroupent tous les individus (membres d’une classe) qui partagent des propriétés pour y faire référence. Les classes représentent ainsi essentiellement des ensembles d’individus. 
 
 En modélisation, les classes sont souvent employées pour dénoter l’ensemble des objets compris par un concept dans la pensée humaine : par exemple, le concept de *personne* ou de *femme*.
 
 - Hiérarchies de classes
 - Instances de classes (individus)
-- Propriétés
-
-cf. https://www.w3.org/TR/owl2-primer/#CWhat_is_OWL_2.3F
+- Propriétés partagées entre les individus
 
 ???
 
@@ -880,26 +885,28 @@ cf. https://www.w3.org/TR/owl2-primer/#CWhat_is_OWL_2.3F
 
 ===↓===
 
-#### Assertion de classes
+## Exemples avec la [syntaxe fonctionnelle](https://www.w3.org/TR/owl2-syntax/#Functional-Style_Syntax) de OWL 2
+
+### Assertion de classes
 
 - `ClassAssertion( :Woman :Mary )`
 
-#### Hiérarchie de classe
+### Hiérarchie de classe
 
 - `SubClassOf( :Woman :Person )`
 - `SubClassOf( :Mother :Woman )`
 
-#### Équivalence de classe
+### Équivalence de classe
 
 - `EquivalentClasses( :Person :Human )`
 
-#### Classe disjointe
+### Classe disjointe
 
 - `DisjointClasses( :Woman :Man )`
 
 ???
 
-### Syntaxe fonctionnelle
+**Syntaxe fonctionnelle**
 
 Assertion de classe, équivalent de *est membre de*, est une instance de. Les classes sont généralement utilisées pour regrouper les individus qui partagent des caractéristiques pour y faire référence. Ainsi, les classes représentent essentiellement des ensembles d’individus.
 
@@ -915,28 +922,28 @@ Incompatibilité d’individu, équivalence de classe. Souvent omis car intuitiv
 
 ===↓===
 
-#### Propriétés
+### Propriétés
 
 - `ObjectPropertyAssertion( :hasWife :John :Mary )`
 - ` NegativeObjectPropertyAssertion( :hasWife :Bill :Mary )`
 
-#### Hiérarchies de propriétés
+### Hiérarchies de propriétés
 
 - `SubObjectPropertyOf( :hasWife :hasSpouse )`
 
-#### Restrictions de domaine et de portée
+### Restrictions de domaine et de portée
 
 - `ObjectPropertyDomain( :hasWife :Man )`
 - `ObjectPropertyRange( :hasWife :Woman )`
 
-#### Égalité et inégalité des individus
+### Égalité et inégalité des individus
 
 - `DifferentIndividuals( :John :Bill )`
 - `SameIndividual( :James :Jim )`
 
 ===↓===
 
-#### Classes complexes
+### Classes complexes
 
 - `ObjectIntersectionOf`
 - `ObjectUnionOf`
@@ -983,87 +990,55 @@ ClassAssertion(
 
 ## Éditeurs d’ontologies
 
-https://protege.stanford.edu (libre et open source)
-
-http://owlgred.lumii.lv
-
-VOWL: Visual Notation for OWL Ontologies http://purl.org/vowl/spec/
+- Protégé : https://protege.stanford.edu (libre et open source)
+- OWLGrEd : http://owlgred.lumii.lv
+- VOWL Visual Notation for OWL Ontologies : [http://purl.org/vowl/spec/](http://purl.org/vowl/spec/)
 
 ===↓===
 
 ## TP visualiser l’ontologie FOAF
 
-- Prendre connaissance de l’ontologie Friend Of a Friend
-
-[FOAF Vocabulary Specification](http://xmlns.com/foaf/spec/)
-
-- Visualiser FOAF avec WebVOWL
-
-http://vowl.visualdataweb.org/webvowl-old/webvowl-old.html  
-(version plus récente mais actuellement indisponible : http://visualdataweb.de/webvowl/#iri=http://xmlns.com/foaf/0.1/)
+- Prendre connaissance de l’ontologie **Friend Of a Friend** : [FOAF Vocabulary Specification 0.99](http://xmlns.com/foaf/spec/)
+- Visualiser FOAF avec WebVOWL : https://service.tib.eu/webvowl/
 
 ### Décrire la classe avec FOAF
 
-- Histoire de réviser un peu sa notation turtle, produisez une notice personnelle avec FOAF
-- Visualiser le graphe produit avec [EasyRDF](http://www.easyrdf.org/converter) ou [RDF grapher](https://www.ldf.fi/service/rdf-grapher)
-
-cf. [WebVOWL: Web-based Visualization of Ontologies](http://vowl.visualdataweb.org/webvowl.html)
-
-===↓===
-
-<!-- .slide: data-background="images/foaf.jpg" data-background-size="contain" -->
-
-===↓===
-
-<!-- .slide: data-background="images/FOAF_concept_view.svg" data-background-size="contain" -->
+- Pour réviser un peu votre notation Turtle, produisez une notice personnelle avec FOAF.
+- Visualiser le graphe produit avec [:isSemantic](https://issemantic.net/rdf-visualizer/) ou [RDFShape](https://rdfshape.weso.es/dataInfo).
 
 ===↓===
 
 ## Exemples d’ontologies
 
-[BIBO](http://bibliontology.com/) (Bibliographical Ontology)
+[BIBO](https://www.dublincore.org/specifications/bibo/bibo/) - (Bibliographical Ontology)
 
-[SPAR](http://www.sparontologies.net) - Semantic Publishing and Referencing Ontologies.
+[SPAR](http://www.sparontologies.net) - Semantic Publishing and Referencing Ontologies
 
-[BIBFRAME](https://www.loc.gov/bibframe/docs/bibframe2-model.html) Bibliographic Framework
+[BIBFRAME](https://www.loc.gov/bibframe/docs/bibframe2-model.html) - Bibliographic Framework
 
-[PROV-O](https://www.w3.org/TR/prov-o/) - Represent provenance information.
+[PROV-O](https://www.w3.org/TR/prov-o/) - Represent provenance information
 
-## Exemple BBC ontologies
+## Exemple BBC Ontologies
 
 https://www.bbc.co.uk/ontologies
 
-[CIDOC-CRM](http://www.cidoc-crm.org/) – CIDOC Conceptual Reference Model
+[CIDOC-CRM](https://cidoc-crm.org/html/cidoc_crm_v7.1.1.html) – CIDOC Conceptual Reference Model
 
 ===↓===
 
 ## Trouver des ontologies
 
-http://prefix.cc
-
-http://kmi.open.ac.uk/technologies/theme/semantic-web-and-knowledge-services
-
-https://lov.linkeddata.es
-
-http://vocab.deri.ie
-
-https://ontindex.io
-
-http://bioportal.bioontology.org
-
-https://treegenesdb.org/ontologies_directory
-
-http://ontologydesignpatterns.org
-
-http://ontolog.cim3.net/wiki/
-
-https://protegewiki.stanford.edu/wiki/Protege_Ontology_Library
-
-http://schemapedia.com
-
-http://linkeddata.org
-
-https://ckan.org
+- http://prefix.cc
+- http://kmi.open.ac.uk/technologies/theme/semantic-web-and-knowledge-services
+- https://lov.linkeddata.es
+- http://vocab.deri.ie
+- http://bioportal.bioontology.org
+- http://ontologydesignpatterns.org
+- http://ontolog.cim3.net/wiki/
+- https://protegewiki.stanford.edu/wiki/Protege_Ontology_Library
+- http://schemapedia.com
+- http://linkeddata.org
+- https://ckan.org
 
 ===↓===
 
@@ -1072,7 +1047,7 @@ https://ckan.org
 ### Quelles opportunités pour les humanités numériques?
 
 - Quelles conséquences sur le format livre?
-- Quelles conséquences sur le document d'archive?
+- Quelles conséquences sur le document d’archive?
 - Quelles sources de données pourraient être utiles?
 - Quels types d’applications possibles?
 

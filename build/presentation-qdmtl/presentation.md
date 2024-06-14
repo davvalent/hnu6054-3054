@@ -8,12 +8,6 @@ HNU6054 – Humanités numériques : Web sémantique et données
 
 26 mai 2023
 
-/** Notes **/
-
-- Alors bonjour, tout l’monde
-- Merci d’avance pour votre écoute
-- Ma présentation s'intitule
-
 ===vvvvvv===
 
 # Plan de la présentation
@@ -374,7 +368,7 @@ data:Record/VM094-C196-0370 rico:hasOrHadMainSubject
 
 ===vvvvvv===
 
-<!-- .slide: data-background-iframe="http://127.0.0.1/~david/dev-web/faubourg-plan-interactif/" data-background-interactive class="stack" -->
+<!-- .slide: data-background-iframe="http://127.0.0.1/~david/dev-web/plan-interactif-faubourg/dist/" data-background-interactive class="stack" -->
 
 /** Notes **/
 
@@ -390,9 +384,10 @@ data:Record/VM094-C196-0370 rico:hasOrHadMainSubject
 
 ===>>>>>>===
 
-À paraître prochainement :
+# Publication et documentation
 
-- Valentine, D. et Forest, D. (à paraître). Le projet QDMTL : modéliser les quartiers disparus de Montréal avec les données ouvertes et liées. *Humanités numériques*, (7).
+- Valentine, D. et Forest, D. (2023). *Le projet QDMTL&nbsp;: modéliser les quartiers disparus de Montréal avec des données ouvertes et liées*. Humanités numériques, (7). https://doi.org/10.4000/revuehn.3336
+- https://qdmtl.ca
 
 
 

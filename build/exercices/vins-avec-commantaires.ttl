@@ -36,11 +36,11 @@ wc:C00871996
       wc:name "Château Montguérêt"@fr ;
       wc:vintage "2011"^^xsd:gYear ;
       wc:format [ a cb:Bottle ;
-                  wc:quantity "75"^^wc:cl ;
+                  wc:quantity "75"^^wc:CL ;
                   wc:price "14.65"^^xsd:decimal ] ,
                 [ a cb:Bottle ;
-                  wc:quantity "1.5"^^wc:L ;
-                  wc:price "25"^^xsd:decimal  ] .
+                  wc:quantity "150"^^wc:CL ;
+                  wc:price "25.25"^^xsd:decimal  ] .
 
 wc:C00042101
       a cb:Wine ;
@@ -70,6 +70,8 @@ cb:Cellar a       rdfs:Class .
 cb:Bottle a       rdfs:Class .
 cb:Wine   a       rdfs:Class .
 
+# Instanciation des propriétés avec la classe rdf:Property
+
 cb:loved
       a           rdf:Property ;
       rdfs:domain cb:Person ;
@@ -80,11 +82,6 @@ cb:ownedBy
       rdfs:domain cb:Cellar ;
       rdfs:range  cb:Person .
 
-# Instanciation des propriétés avec la classe rdf:Property
-# Remarque : le datatype rdf:XMLLiteral que nous avons utilisé en classe
-# sert à indiquer que la chaîne de caractère utilise la syntaxe XML
-# et que l'objet doit être traité comme tel, ce qui n'est pas le cas
-# dans notre exemple. Nous utiliserons donc la classe rdfs:Literal.
 wc:name
       a rdf:Property ;
       rdfs:domain cb:Wine ;
@@ -99,3 +96,16 @@ wc:vintage
       a rdf:Property ;
       rdfs:domain cb:Wine ;
       rdfs:range xsd:gYear .
+
+wc:format a rdf:Property ;
+      rdfs:domain cb:Wine ;
+      rdfs:range cb:Bottle .
+
+wc:quantity a rdf:Property ;
+      rdfs:domain cb:Bottle ;
+      rdsf:range wc:CL .
+
+# Instanciation des types de données pour les littéraux avec la classe rdf:Property
+
+wc:CL a rdfs:Datatype ;
+      rdfs:label "Unité de mesure : centilitre"@fr .

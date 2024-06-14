@@ -1,13 +1,38 @@
 ## HNU6054 – Humanités numériques : Web sémantique et données
 
 # SPARQL
+
 Emmanuel Château-Dutier et Antoine Fauchié, mars 2021<br>
-David Valentine, mai 2023
+David Valentine, mai 2023, juin 2024
 
 Site web pour les ressources du cours :  
-[https://davvalent.github.io/hnu6054/](https://davvalent.github.io/hnu6054/)
+[https://davvalent.github.io/hnu6054-3054/](https://davvalent.github.io/hnu6054-3054/)
 
 ===↓===
+
+# Séance 3 : vendredi 14 juin 2024
+
+- Retour sur l’exercice 1
+- Tour de table : choix des projets pour l’analyse
+- Retour sur le cellier de Jude Raisin
+- Vocabulaires et ontologies : conclusion
+- SPARQL
+- Projets d’encodage et traitement de données RDF avec Python
+
+## Lectures
+
+- DuCharme, B. (2013). Learning SPARQL: Querying and Updating with SPARQL 1.1 (Second edition). O’Reilly. http://www.learningsparql.com
+
+???
+
+Rappels sur la dernière séance
+
+- Technologies du web sémantique
+- Les données liées ouvertes, une manière d’utiliser le web pour publier et lier des données entre elles.
+- Expression de faits sous la forme de graphes orientés avec le cadre de description RDF
+- Notions de ressource, identifiant et représentation, architecture HTTP.
+
+===→===
 
 # Sommaire
 
@@ -15,15 +40,9 @@ Site web pour les ressources du cours :
 
 ## 2. Notation SPARQL
 
-???
-
-===→===
+===↓===
 
 # 1. Le protocole et le langage de requête SPARQL
-
-???
-
-
 
 ===↓===
 
@@ -35,7 +54,7 @@ Site web pour les ressources du cours :
 
 ## Rappels sur la notation Turtle
 
-#### Notation des IRI (rappels)
+### Notation des IRI (rappels)
 
 [Internationalized Resource Identifiers (IRIs)](https://tools.ietf.org/html/rfc3987)
 
@@ -43,7 +62,7 @@ Site web pour les ressources du cours :
 
 `<http://monIri.ca/ontologie#concept>`
 
-#### Notation des triplets (rappels)
+### Notation des triplets (rappels)
 
 Un triplet est noté par trois IRI suivis par un point. Ils désignent respectivement le sujet, le prédicat et l’objet RDF. 
 
@@ -63,9 +82,9 @@ ex:s ex:p "o" .
 
 ???
 
-### Remarques
+**Remarques**
 
-Un triplets regroupe trois composantes, séparées par un espace pour éviter les ambiguïtés.
+Un triplet regroupe trois composantes, séparées par un espace pour éviter les ambiguïtés.
 
 Ne pas oublier le point final.
 
@@ -73,43 +92,33 @@ Ne pas oublier le point final.
 
 ## Définitions de préfixes (rappels)
 
-Un préfixe pour un IRI est défini par
+Un préfixe pour un IRI est défini par : `PREFIX *ident*: *IRI* .`
 
-`PREFIX *ident*: *IRI* .`
-
-Exemple :
+Par exemple :
 
 ```turtle
-PREFIX ex: <http://publicarchitectura/exemple#> .
+PREFIX ex: <http://publicarchitectura/exemple#>
 ```
 
-Ce préfixe est utilisé à une déclaration pour former l’IRI complet. Ainsi `ex:toto` désignera l’IRI `<http://publicarchitectura/exemple#toto>`. 
+Ce préfixe est utilisé à une déclaration pour former l’IRI complet. Ainsi, `ex:toto` désignera l’IRI `<http://publicarchitectura/exemple#toto>`.
 
-L’identificateur de préfixe peut être vide.
+L’identificateur de préfixe peut être vide : `PREFIX : <http://publicarchitectura/exemple#>`
+
+Résultat : `:toto` désigne `<http://publicarchitectura/exemple#toto>`
 
 ===↓===
 
 ### Raccourcis
 
-Lorsqu’un **sujet est partagé par plusieurs triplets** successifs, les paires prédicat et objet sont séparées par un point-virgule : `;`
+Lorsqu’un **sujet est partagé par plusieurs triplets** successifs, les paires prédicat et objet sont séparées par un point-virgule :
 
 ```turtle
 ex:s ex:p1 "o1" ; ex:p2 "o2" .
 ```
 
-```turtle
-ex:s ex:p1 "o1" . 
-ex:s ex:p2 "o2" .
-```
-
-Lorsqu’un **sujet et un prédicat sont communs** à plusieurs déclarations, ces dernières sont séparées par des virgules
+Lorsqu’un **sujet et un prédicat sont communs** à plusieurs déclarations, les objets sont séparées par des virgules :
 
 `ex:s ex:p ex:o , "o1".`
-
-```turtle
-ex:s ex:p ex:o. 
-ex:s ex:p "o1".
-```
 
 ???
 
@@ -117,7 +126,7 @@ ex:s ex:p "o1".
 
 ===↓===
 
-## Notation des nœuds anonymes
+## Notation des nœuds anonymes (ou nœuds vides)
 
 Plusieurs notations possibles :
 
@@ -136,12 +145,12 @@ La notation avec crochets permet de combiner des triplets avec les raccourcis `,
 
 ## Constantes et littéraux
 
-Les constantes sont des **chaînes de caractères** entourées par des guillemets simples `’` ou doubles `"`
+Les constantes sont des **chaînes de caractères** entourées par des guillemets simples `'` ou doubles `"`.
 
 Il est possible de **typer les littéraux** avec [XML Schema](https://www.w3.org/TR/xmlschema-2/)
 
-- suffixe `^^` suivi immédiatement du type xsd
-- déclarer le préfixe avec `@PREFIX xsd: http://www.w3.org/2001/XMLSchema-datatypes .`
+- suffixe `^^` suivi immédiatement du type `xsd`
+- pour déclarer le préfixe en Turtle : `@PREFIX xsd: <http://www.w3.org/2001/XMLSchema-datatypes> .`
 
 ```
 "3"^^xsd:integer
@@ -153,7 +162,11 @@ Il est possible de **typer les littéraux** avec [XML Schema](https://www.w3.org
 - décimal `1.2 ≡ "1.2"^^xsd:decimal`
 - exposant `1.2e8 ≡ "1.2e8"^^xsd:double`
 
-Il est aussi possible d’étiqueter la langue d’une chaîne de caractères avec le suffixe `@` et un code langue ISO
+===↓===
+
+## Étiqueter la langue des littéraux
+
+Il est aussi possible d’étiqueter la langue d’une chaîne de caractères avec le suffixe `@` et un code langue ISO.
 
 - `"texte"@fr`
 - `"text"@en`
@@ -162,12 +175,12 @@ Il est aussi possible d’étiqueter la langue d’une chaîne de caractères av
 
 ## SPARQL Protocol and RDF Query Language
 
-SPARQL est [un ensemble de recommandations du W3C](https://www.w3.org/2009/sparql/wiki/Main_Page) pour travailler des bases de triplets RDF
+SPARQL est [un ensemble de recommandations du W3C](https://www.w3.org/TR/sparql11-overview/#sec-intro) pour travailler des bases de triplets RDF (entrepôts RDF ou Triple Strores).
 
 - un protocole
 - un langage de requête et de manipulation de données
 
-Syntaxe basée sur la définition de modèles de triplets comportant des variables
+Syntaxe basée sur la définition de modèles de triplets comportant des **variables**.
 
 ### Standards
 
@@ -186,7 +199,9 @@ Inspiré des langages relationnels SQL, plusieurs antécédents SPARQL, RQL, TRI
 
 ===↓===
 
-#### SQL vs SPARQL
+## SQL vs SPARQL
+
+### SQL
 
 ```sql
 SELECT e.surname AS es, p.name AS pn
@@ -196,7 +211,9 @@ WHERE e.gender = 'male'
 		AND e.surname LIKE 'N\%';
 ```
 
-```SPARQL
+### SPARQL
+
+```sql
 PREFIX : <http://example.org/>
 SELECT ?sn, (?projname AS ?pn) 
 WHERE {
@@ -251,9 +268,9 @@ Supposant un graphe de triplet chargé dans un service SPARQL, le langage de req
 
 ???
 
-Supposant un graphe de triplet chargé dans un service SPARQL, le Langage de requêtes SPARQL permet de formuler des requêtes qui prennent la forme de **motifs de graphe** plus ou moins complexes. 
+Supposant un graphe de triplet chargé dans un service SPARQL, le langage de requêtes SPARQL permet de formuler des requêtes qui prennent la forme de **motifs de graphe** plus ou moins complexes.
 
-### Formats des résultats
+**Formats des résultats**
 
 Afin de pouvoir échanger les résultats dans des formats lisibles par la machine, SPARQL supporte **quatre formats d’échanges** : 
 
@@ -264,7 +281,7 @@ Afin de pouvoir échanger les résultats dans des formats lisibles par la machin
 
 ===↓===
 
-##### Soit, le graphe de triplets suivant
+## Soit, le graphe de triplets suivant
 
 ```turtle
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -291,14 +308,14 @@ cf. [SPARQL 1.1 Overview](http://www.w3.org/TR/sparql11-overview/)
 
 ???
 
-- Séries d'exemples
-- N'entre pas dans le détail, J'y viens dans la deuxième partie de la présentation
+- Séries d’exemples
+- N’entre pas dans le détail, j’y viens dans la deuxième partie de la présentation
 
 ===↓===
 
-##### La requête SPARQL suivante avec SELECT
+### La requête SPARQL suivante avec SELECT
 
-```SPARQL
+```sql
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 SELECT ?person
 WHERE
@@ -309,7 +326,7 @@ WHERE
 
 --
 
-Ramène toutes les personnes 
+Sélectionne tous les triplets dont le sujet (représenté par la variable `?person`) est de type `foaf:Person` et affiche la valeur assignée à la variable `?person` pour chaque triplet.
 
 ???
 
@@ -325,20 +342,21 @@ Dans cette requête nous avons un premier motif de triplet qui sélectionne les 
 
 <!-- .slide: data-background="images/sparqlWhere.png" data-background-size="contain" -->
 
-WHERE spécifie les données à tirer ; `SELECT` détermine les données qui doivent être présentées. 
-
-(Figure dans Bob DuCharme, Learning SPARQL, O’Reilly)
+### Schéma d'une requête SPARQL (DuCharme, 2013)
 
 ???
 
-@todo
+- **`WHERE spécifie les données à tirer`**
+- **`SELECT détermine les données qui doivent être présentées`**
+
+Figure tirée de DuCharme (2013), *Learning SPARQL*, O’Reilly
 
 - on doit sélectionner les triplets (clause `WHERE`)
-- on doit afficher les valeurs que l'on souhaite consulter (clause `SELECT`)
+- on doit afficher les valeurs que l’on souhaite consulter (clause `SELECT`)
 
 ===↓===
 
-##### La requête SPARQL suivante avec SELECT
+### La requête SPARQL suivante avec SELECT
 
 ```SPARQL
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -353,11 +371,13 @@ WHERE
 
 --
 
-Ramène les noms des personnes et leur courriel s’il y en a et que ces personnes ont la propriété `foaf:name` et `foaf:mbox` renseignées.
+Sélectionne tous les triplets dont le sujet est de type `foaf:Person`, et dont le sujet a un nom, et dont le sujet a un email, puis affiche les valeurs assignées aux variables `?name` et `?email` pour chaque triplet.
+
+Remarque : les triplets ayant un sujet de type `foaf:Person`, mais dont le sujet n'a pas de nom ou d'email sont exclus, car ils ne correspondent pas au motif de triplet spécifié.
 
 ???
 
-Les autres motifs de triplets lient la variable personne avec des triplets qui ont des propriétés foaf:name et foaf:mbox. Le processeur, après avoir identifier les triplets qui correspondent au premier motif, garde en mémoire la valeur de la variable pour analyser les autres triplets.
+Les autres motifs de triplets lient la variable personne avec des triplets qui ont des propriétés foaf:name et foaf:mbox. Le processeur, après avoir identifié les triplets qui correspondent au premier motif, garde en mémoire la valeur de la variable pour analyser les autres triplets.
 
 La clause SELECT appelle deux variables qui sont le nom et l’email.
 
@@ -365,9 +385,9 @@ Cette requête opère une jointure entre tous les triplets qui ont un sujet corr
 
 ===↓===
 
-##### La requête SPARQL suivante avec SELECT
+### La requête SPARQL suivante avec SELECT
 
-```SPARQL
+```sql
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 SELECT ?name ?email
 WHERE
@@ -382,11 +402,11 @@ WHERE
 
 --
 
-Ramène les noms des personnes et leur courriel (s’il y en avait) et filtre sur leur date de naissance.
+Retourne les noms des personnes et leur courriel, et filtre sur leur date de naissance.
 
 ===↓===
 
-##### La requête SPARQL suivante avec SELECT
+### La requête SPARQL suivante avec SELECT
 
 ```SPARQL
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -399,7 +419,7 @@ WHERE {
 
 --
 
-ramène les noms des personnes et leur nombre d’amis
+Retourne les noms des personnes et leur nombre d’amis.
 
 ???
 
@@ -441,13 +461,12 @@ Charlie,1
 
 ===↓===
 
-### Différences entre la spécification 1.0 et 1.1
+## Différences entre la spécification 1.0 et 1.1
 
 - Comme dans la spécification précédente 1.0 de 2008, il est aussi possible de formuler des requêtes complexes avec union, des parties optionnelles (optional query parts) et des filtres (filters).
 - La spécification 1.1 introduit l’agrégation de valeurs (*value aggregation*), les expressions de chemin  (*path expressions*), la possibilité de formuler des requêtes imbriquées (*nested queries*), etc. 
 - En dehors de la clause `SELECT` - qui lie des variables - SPARQL supporte la clause `ASK` – i.e. boolean "yes/no" – et la clause `CONSTRUCT` avec laquelle de nouveaux graphes RDF peuvent être construits à partir d’un résultat de requête.
-
-Nota : SPARQL 1.1 offre également la possibilité de faire des requêtes fédérées sur plusieurs SPARQL endpoints cf. [SPARQL 1.1 Federated Query](http://www.w3.org/TR/sparql11-federated-query/)
+- SPARQL 1.1 offre également la possibilité de faire des **requêtes fédérées** sur plusieurs SPARQL endpoints cf. [SPARQL 1.1 Federated Query](http://www.w3.org/TR/sparql11-federated-query/)
 
 ===↓===
 
@@ -472,17 +491,24 @@ Ces opérations permettent de mettre à jour, de créer et de supprimer des grap
 
 ===↓===
 
-##### Exemple de mise à jour d’un graphe de triplets
+### Exemple de mise à jour d’un graphe de triplets
 
-````SPARQL
+```sql
 PREFIX foaf: <http://xmlns.com/foaf/0.1/> .
 
-INSERT DATA { <http://www.example.org/alice#me> 
-              foaf:knows [ foaf:name "Dorothy" ]. } ;
-DELETE { ?person foaf:name ?name } 
-WHERE { <http://www.example.org/alice#me> foaf:knows ?person .
-        ?person foaf:name ?name FILTER ( lang(?name) = "EN" ) .}
-````
+INSERT DATA {
+  <http://www.example.org/alice#me> 
+    foaf:knows [ foaf:name "Dorothy" ].
+}
+DELETE {
+  ?person foaf:name ?name .
+} 
+WHERE {
+  <http://www.example.org/alice#me> foaf:knows ?person .
+  ?person foaf:name ?name
+  FILTER ( lang(?name) = "EN" ) .
+}
+```
 
 ???
 
@@ -502,7 +528,7 @@ Comme on le voit, la seconde opération peut être dépendante du résultat d’
 
 ===↓===
 
-#### Exemple de requête HTTP
+### Exemple de requête HTTP
 
 ```txt
 GET /sparql/?query=PREFIX%20foaf%3A%20%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0ASELECT%20%3Fname%20%28COUNT%28%3Ffriend%29%20AS%20%3Fcount%29%0AWHERE%20%7B%20%0A%20%20%20%20%3Fperson%20foaf%3Aname%20%3Fname%20.%20%0A%20%20%20%20%3Fperson%20foaf%3Aknows%20%3Ffriend%20.%20%0A%7D%20GROUP%20BY%20%3Fperson%20%3Fname 
@@ -515,7 +541,7 @@ User-agent: my-sparql-client/0.1
 
 Dans cet exemple, la requête SPARQL est adressé via HTTP à l’hôte `http://www.example.org/sparql/`. Conformément à la spécification, cette requête est inclue dans une requête GET où la chaîne de requête est encodée. Le protocole fournit plusieurs détails sur les opérations de requête et de mise à jour, les méthodes HTTP ainsi que les formats de réponses supportés. 
 
-### Quelques notions relatives au protocole
+**Quelques notions relatives au protocole**
 
 - **SPARQL Protocol client** An HTTP client (as defined by [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec1.html#sec1.3) [[RFC2616](https://www.w3.org/TR/2013/REC-sparql11-protocol-20130321/#rfc2616)]) that sends HTTP requests for SPARQL Protocol operations. (Also known as: *client*)
 - **SPARQL Protocol service** An HTTP server that services HTTP requests and sends back HTTP responses for SPARQL Protocol operations. The URI at which a SPARQL Protocol service listens for requests is generally known as a SPARQL endpoint. (Also known as: *service*)
@@ -527,11 +553,7 @@ Dans cet exemple, la requête SPARQL est adressé via HTTP à l’hôte `http://
 
 ## SPARQL endpoint
 
-L’URI à laquelle un service est accessible au moyen du protocole SPARQL écoute les requêtes d’un client SPARQL
-
-- https://ckan.org
-- https://datahub.io
-- http://sparqles.ai.wu.ac.at
+L’URL à laquelle un service est accessible au moyen du protocole SPARQL. Le **serveur** écoute les requêtes d’un **client** SPARQL.
 
 ### Exemples d’implémentations logicielles
 
@@ -556,20 +578,20 @@ Ex. [SPARQL Playground](http://sparql-playground.sib.swiss/) est un outil pédag
 
 ## Syntaxe SPARQL
 
-La syntaxe SPARQL est basée sur la définition de modèles de triplets comportant des variables qui correspondent à des triplets de la base
+La syntaxe SPARQL est basée sur la **définition de modèles de triplets** comportant des **variables** qui correspondent à des triplets de la base.
 
-#### Clause de résultat (*result clause*)
+### Clause de résultat (*result clause*)
 
-`SELECT`, `WHERE`, `CONSTRUCT`, `ASK`, `DESCRIBE`
+`SELECT`, `CONSTRUCT`, `ASK`, `DESCRIBE`
 
-#### Modèle de graphe (*query pattern*)
+### Modèle de graphe (*query pattern*)
 
-Précédé par la clause `WHERE`
+Le modèle de graphe est précédé par la clause `WHERE`.
 
 - requêtes basées sur la notion de **modèles de graphe**
 - des **variables** (identificateurs précédés de `?` ou `$`) sont instanciées lorsqu’un triplet concorde avec le modèle
 
-#### Modificateurs de requête (*query modifiers*)
+### Modificateurs de requête (*query modifiers*)
 
 - Pour limiter, ordonner ou réarranger les résulats
 
@@ -577,18 +599,22 @@ Précédé par la clause `WHERE`
 
 ## Structure d’une requête SPARQL
 
-```SPARQL
+```sql
 # prefix declarations
 PREFIX foo: <http://example.com/resources/>
 ...
+
 # dataset definition
 FROM ...
+
 # result clause
 SELECT ...
+
 # query pattern
 WHERE {
     ...
 }
+
 # query modifiers
 ORDER BY ...
 ```
@@ -616,7 +642,7 @@ Dans l’ordre, une requête SPARQL se compose des éléments (optionnels) suiva
 
 ???
 
-### Clause de résulat ou type de requête
+**Clause de résulat ou type de requête**
 
 Une requête débute par une clause qui peut comporter l’un des verbes suivants
 
@@ -637,7 +663,7 @@ Comme on peut utiliser les notations abrégées de triplets, ce modèle de graph
 
 ???
 
-### Modèle de graphe
+**Modèle de graphe**
 
 SPARQL a une syntaxe basée sur la définition de modèles de triplets comportant des variables qui correspondent à des triplets de la base
 
@@ -649,7 +675,7 @@ SPARQL a une syntaxe basée sur la définition de modèles de triplets comportan
 ### Exemple de modèle de graphe
 
 ```SPARQL
-PREFIX purl:
+PREFIX purl: <>
 ```
 
 ???
@@ -663,7 +689,7 @@ PREFIX purl:
 - URI ou Littéral `?var ?une_autre_var $v`
 - Nœuds vides `_:id []`
 
-#### Patrons de triplets
+### Patrons de triplets
 
 - Match complet 	`ex:machin ex:numero "45692"`
 - Match avec une variable 	`?machin ex:numero "45692"`
@@ -675,7 +701,7 @@ PREFIX purl:
 
 - `ORDER BY`, `LIMIT`, `OFFSET` 
 
-pour limiter l’ensemble résultat comme dans SQL
+pour limiter l’ensemble des résultats comme dans SQL
 
 - `FROM`, `FROM NAMED` 
 
@@ -687,7 +713,7 @@ retire les doublons du résultat
 
 - `VALUES` 
 
-variables prédéfinie spécifiant liant dans la forme tabulaire
+pour assigner des valeurs spécifiques à des variables
 
 ===↓===
 
@@ -700,6 +726,8 @@ Les triplets étant considérés comme un ensemble, il n’est pas possible de s
 
 - `ORDER BY *variables*` à la fin de la requête, trie les solutions en ordre croissant des variables; pour l’ordre décroissant, on indique `DESC(*variable*)`. On peut trier les solutions sur plusieurs clés.
 - `DISTINCT` à placer immédiatement après le *verbe* (i.e. le premier terme) d’une requête pour garantir que chaque solution n’apparaîtra qu’une fois.
+
+===↓===
 
 ### Autres possibilités
 
@@ -745,17 +773,13 @@ UNION
 OPTIONAL { ?y :s _:a }
 ```
 
-```SPARQL
-# Patterns on Named Graph
-```
-
 ===↓===
 
 ## Filtres
 
 Syntaxe : `FILTER(boolean condition)`
 
-La clause filtre les résultats de BGP, il peut être placé n’importe où dans un BGP.
+La clause `FILTER` filtre les résultats d'un *Basic Graph Pattern* (BGP). Elle peut être placée n’importe où dans un BGP.
 
 `FILTER *expression*` où `*expression*` est composée d’une combinaison des éléments suivants :
 
@@ -844,7 +868,7 @@ Tous les triplets s’électionnés peuvent ne pas avoir d’étiquette dans cha
 
 ???
 
-Si pas d'étiquette, les triplets sont retenus quand même.
+Si pas d’étiquette, les triplets sont retenus quand même.
 
 ===↓===
 
@@ -965,8 +989,10 @@ data groups and filter in them using GROUP BY/HAVING construct
 ```SPARQL
 PREFIX : <http://example.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
 SELECT ?i COUNT(?s) AS ?count
 FROM :inventors 
+
 WHERE {
 	?s :invented ?i. 
 }
@@ -980,9 +1006,11 @@ GROUP BY ?i
 ```SPARQL
 PREFIX : <http://example.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT (COUNT(?s) AS ?count) ?i (GROUP_CONCAT(?s;separator=",") AS
+
+SELECT (COUNT(?s) AS ?count) ?i (GROUP_CONCAT(?s;separator=", ") AS
 	?inventors) 
 FROM :inventors 
+
 WHERE {
 	?s :invented ?i. 
 }
@@ -1008,9 +1036,10 @@ Aide-Mémoire http://www.iro.umontreal.ca/~lapalme/ift6282/SparqlRappels.html
 
 ===↓===
 
-### SPARQL par l’exemple 
+## SPARQL par l’exemple 
 
-(dans **YASGUI** sur https://data.persee.fr/explorer/sparklis/)
+1. Prendre connaissance du modèle de données : https://data.persee.fr/explorer/schemas-de-donnees/
+1. Accéder à l'interface **YASGUI** sur https://data.persee.fr/explorer/sparklis/.
 
 - Explorer l’ensemble des contenus
 - Chercher les noms, prénoms et auteurs de tous les auteurs
@@ -1054,8 +1083,6 @@ WHERE {
 LIMIT 100
 ```
 
-Exemple https://isidore.science/sqe
-
 ===↓===
 
 ### Chercher les noms et prénoms de tous les auteurs
@@ -1073,7 +1100,7 @@ WHERE {
 
 ???
 
-Dans le modèle de triplets définit par la clause `WHERE`, il ne faut pas confondre la mise en relation du document et de la personne par la propriété `marcrel:aut` avec l'instanciation d'un personne en tant qu'auteur. Pour ce faire, il faudrait, dans les données RDF, mettre la personne en position de sujet et déclarer qu'elle est de type auteur.
+Dans le modèle de triplets définit par la clause `WHERE`, il ne faut pas confondre la mise en relation du document et de la personne par la propriété `marcrel:aut` avec l’instanciation d’un personne en tant qu’auteur. Pour ce faire, il faudrait, dans les données RDF, mettre la personne en position de sujet et déclarer qu’elle est de type auteur.
 
 ===↓===
 
@@ -1150,7 +1177,7 @@ SELECT * {
 }
 ```
 
-On peut également préfixer l'URI qui identifie la ressource et utiliser le préfixe dans la requête, par exemple :
+On peut également préfixer l’URI qui identifie la ressource et utiliser le préfixe dans la requête, par exemple :
 
 ```SPARQL
 PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
@@ -1228,7 +1255,7 @@ WHERE {
 
 ???
 
-Supposant que je ne connais pas l'identifiant.
+Supposant que je ne connais pas l’identifiant.
 
 - Je cherche tous les triplets qui ont un sujet avec un nom de famille et un prénom.
 - Et filtre en cherchant Lepetit dans le nom de famille et lBernard dans le prénom.
@@ -1252,7 +1279,7 @@ SELECT ?author ?doc {
 
 Ajout :
 
-- je cherche tous les triplets dont le sujet a un ID (c'est pratique)
+- je cherche tous les triplets dont le sujet a un ID (c’est pratique)
 - dont le sujet a un auteur, et dont l,auteur...
 
 ===↓===
@@ -1373,12 +1400,12 @@ LIMIT 200
 
 ???
 
-1. je ramène d'abord tous les documents qui ont pour auteur Lepetit
-2. ensuite, pour les mêmes sujets (documents), j'ajoute une variable pour les coauteurs, et donc tous les auteurs y compris Lepetit s'y retrouvent, et j'exclue Lepetit.
+1. je ramène d’abord tous les documents qui ont pour auteur Lepetit
+2. ensuite, pour les mêmes sujets (documents), j’ajoute une variable pour les coauteurs, et donc tous les auteurs y compris Lepetit s’y retrouvent, et j’exclue Lepetit.
 
-Donc j'ai une variable dans laquelle se retrouvent tous les auteurs de ces documents, sauf Lepetit.
+Donc j’ai une variable dans laquelle se retrouvent tous les auteurs de ces documents, sauf Lepetit.
 
-Autrement dit, c'est de dupliquer une variable auteur pour le même document : pour une, je garde seulement Lepetit, pour l'autre j'exclus Lepetit.
+Autrement dit, c’est de dupliquer une variable auteur pour le même document : pour une, je garde seulement Lepetit, pour l’autre j’exclus Lepetit.
 
 ===↓===
 

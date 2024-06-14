@@ -1,0 +1,58 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cb:      <http://www.iro.umontreal.ca/lapalme/CellarBook#> .
+@prefix wc:      <http://www.iro.umontreal.ca/lapalme/WineCatalog#> .
+
+cb:theCellar
+      cb:ownedBy cb:JudeRaisin ;                        # 1
+      a       rdf:Bag ;                                 # 4
+      rdf:_1  wc:C00043125 ;
+      rdf:_2  wc:C00042101 ;
+      rdf:_3  wc:C00871996 ;
+      cb:locatedAt [ cb:city "Vallée des crus" ;        # 5,6
+                     cb:street "4587 des Futailles"] .
+
+cb:JudeRaisin cb:city "St-George" ;                     # 2
+      cb:named [ cb:family "Raisin" ;
+                 cb:first "Jude" ] ;
+      cb:loved wc:C00043125 , wc:C00871996  ;           # 3
+      cb:comment "this is <b>great</b>!"^^rdf:XMLLiteral ;
+      cb:street "1234 rue des Châteaux" .
+
+# Instanciation et description des vins vue en classe
+# On les instancie comme membres de la classe cb:Wine
+wc:C00871996 rdf:type cb:Wine .
+wc:C00042101 a cb:Wine .
+wc:C00043125 a cb:Wine ;
+      wc:name "Domaine de l'Île Margaux" .
+
+# Schema part in RDFS
+
+cb:Person a       rdfs:Class .                         # 7
+cb:Cellar a       rdfs:Class .
+cb:Bottle a       rdfs:Class .
+
+# Instanciation de la classe cb:Wine vue en classe
+# Classe des vins
+cb:Wine a         rdfs:Class ;
+      rdfs:comment "Le vin est une boisson alcoolisée faite à base de raisins."
+
+cb:loved                                               # 8
+      a           rdf:Property ;
+      rdfs:domain cb:Person ;
+      rdfs:range  cb:Wine .
+
+cb:ownedBy                                             # 9
+      a           rdf:Property ;
+      rdfs:domain cb:Cellar ;
+      rdfs:range  cb:Person .
+
+# Désambiguisation des termes "name" et "named"
+wc:name a rdf:Property ;
+      rdfs:domain cb:Wine ;
+      rdfs:comment "Nom des vins"@fr .
+
+cb:named a rdfs:Property ;
+      rdfs:domain cb:Person ;
+      rdfs:comment "Nom des personnes"@fr .
+
