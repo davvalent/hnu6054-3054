@@ -11,9 +11,9 @@ presentation: /presentations/seance-03.html
 seance: 3
 order: 1
 print: false
-deactivated: true
+deactivated: false
 
 ---
 ## Ressources
 
-À venir
+DuCharme, B. (2013). *Learning SPARQL: Querying and Updating with SPARQL 1.1* (Second edition). O’Reilly. http://www.learningsparql.com
