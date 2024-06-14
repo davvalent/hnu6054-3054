@@ -11,6 +11,6 @@ presentation: /presentations/seance-04.html
 seance: 3
 order: 2
 print: false
-deactivated: true
+deactivated: false
 ---
 
