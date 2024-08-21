@@ -29,7 +29,7 @@ L’objectif de cet exercice est de construire des requêtes avec ce service afi
     - aux exemples de requêtes, accessibles depuis la liste déroulante en haut à gauche dans l’interface (remarque : nécessite de recharger la page après visualisation des exemples dans l’outil graphique)
     - au guide d’utilisation, situé sous la liste déroulante des exemples de requêtes
 3. Construire les requêtes suivantes et observer les résultats :
-   - toutes les œuvres qui ont pour auteur `Dalí`, listées par année de création décroissante
+   - toutes les œuvres qui ont pour auteur ~~`Dalí`~~ (voir https://fr.wikipedia.org/wiki/Jennifer_Angus; il semble y avoir pas mal de données, à voir si toutes les requêtes demandées ici donnent des résultats intéressants), listées par année de création décroissante
    - ajouter à cette liste les musées qui exposent ces œuvres
    - inclure les œuvres pour lesquelles on ne dispose pas d’information sur le lieu d’exposition
    - chercher les artistes exposés dans les mêmes musées que Dalí

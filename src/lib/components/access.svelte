@@ -5,21 +5,32 @@
   export let title;
   
 </script>
-  
-{#if deactivated}
-  {title}
-{:else}
-  <a href="s/{slug}">{title}</a>
-{/if}
+
+<span title="{title}">
+  {#if deactivated}
+    <a href="s/{slug}"
+      tabindex="-1"
+      aria-disabled="true">{title}</a>
+  {:else}
+    <a href="s/{slug}">{title}</a>
+  {/if}
+</span>
 
 <style>
 
 a {
-  text-decoration: none;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
 	text-decoration: none;
+}
+
+a[aria-disabled="true"] {
+  pointer-events: none;
+}
+
+span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
 }
 
 </style>
