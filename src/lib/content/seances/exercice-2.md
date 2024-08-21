@@ -16,6 +16,8 @@ deactivated: true
 ---
 Travail final, à rendre le **le vendredi 28 juin 2024** (50% de la note totale).
 
+## Description du travail
+
 Le travail final porte sur l’analyse d’un projet utilisant les technologies du web sémantique ou du Linked Open Data et la production de requêtes SPARQL.
 L’étudiante ou l’étudiant choisit une application de son choix qui dispose d’un point d’accès SPARQL en fonction de ses centres d’intérêt.
 
@@ -24,10 +26,16 @@ L’étudiante ou l’étudiant choisit une application de son choix qui dispose
 3. Expliquer comment les technologies du web sémantique apportent une solution pertinente au projet en vous intéressant notamment à l’**ontologie** et aux **vocabulaires** utilisés
 4. Produire au moins cinq exemples de requêtes SPARQL suffisamment complexes et intéressantes pour démontrer l’intérêt de la ressource. Vous pouvez accompagner ces requêtes d’un court texte de présentation.
 
+## Rendu
+
+Le rendu prend la forme d’un texte rédigé d’une longueur d’environ **500 mots** (non compris les requêtes et leur description).
+Le dépôt se fait au format PDF par l’intermédiaire de Studium.
+
+- URL du point d'accès
+
 Pour être en mesure de réaliser ce travail, assurez-vous que le projet qui vous intéresse dispose d’un **point d’accès SPARQL** fonctionnel et d’une description du modèle de données (**ontologie et vocabulaires**).
 
-Le rendu prend la forme d’un texte rédigé d’une longueur d’environ 500 mots (non compris les requêtes et leur description).
-Le dépôt se fait au format PDF par l’intermédiaire de Studium.
+## Évaluation
 
 L’idéal serait de présenter des requêtes fonctionnelles, mais vous ne serez pas évalués sur les résultats.
 Pour certaines requêtes complexes, il est possible de décrire la requête et les résultats attendus, puis d’essayer de la formuler en indiquant que vous n’êtes pas parvenu à obtenir le résultat attendu.
@@ -89,4 +97,4 @@ Douglas McCarthy, Andrea Wallace. 2018. Survey of GLAM open access policy and pr
 ### Sélection culture et documents
 
 - Artsdata http://kg.artsdata.ca
-- Prism https://prisms.digital
+- Prisms https://prisms.digital
