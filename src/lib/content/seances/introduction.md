@@ -12,7 +12,7 @@ presentation: /presentations/seance-01.html
 seance: 1
 order: 1
 print: false
-deactivated: false
+deactivated: true
 ---
 <!-- ## Démonstration : formuler une requête HTTP et observer la réponse du serveur -->
 

@@ -11,7 +11,7 @@ presentation: null
 print: true
 seance: 2
 order: 2
-deactivated: false
+deactivated: true
 ---
 
 <script>

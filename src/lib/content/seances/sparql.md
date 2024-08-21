@@ -11,7 +11,7 @@ presentation: /presentations/seance-03.html
 seance: 3
 order: 1
 print: false
-deactivated: false
+deactivated: true
 
 ---
 ## Ressources

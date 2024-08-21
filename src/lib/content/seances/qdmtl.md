@@ -10,5 +10,5 @@ presentation: /presentation-qdmtl/index.html
 seance: 3
 order: 2
 print: false
-deactivated: false
+deactivated: true
 ---

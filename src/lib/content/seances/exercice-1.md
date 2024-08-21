@@ -12,7 +12,7 @@ presentation: null
 seance: 2
 order: 3
 print: true
-deactivated: false
+deactivated: true
 ---
 [DBpedia](https://www.dbpedia.org) est une plateforme de données liées offrant un accès à de larges jeux de données produits à partir des informations de l’encyclopédie libre *Wikipédia*.
 Cette plateforme propose plusieurs modes d’accès à ses données, dont un point d’accès SPARQL auquel il est possible de brancher des interfaces de requêtes.
