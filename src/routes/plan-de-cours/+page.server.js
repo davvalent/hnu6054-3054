@@ -8,15 +8,15 @@ import {
   processReferences
 } from '$lib/processReferences.js';
 
-export const load = async () => {
+export const load = async ({ url }) => {
 
 /**
  * @todo voir si citeproc.js serait possible, pour éviter les requêtes sur le réseau
  */
 
 const zoteroApi = ZOTERO_API + ZOTERO_GROUP + "/collections/",
-  response = await fetch( zoteroApi, { method: "GET" }),
-  collections = await response.json();
+  response = await fetch( zoteroApi, { method: "GET" });
+let collections = await response.json();
 
 const collectionsPlusFormattedReferences = await processReferences(
   zoteroApi,
@@ -25,7 +25,8 @@ const collectionsPlusFormattedReferences = await processReferences(
 );
 
 return {
-    collections: collectionsPlusFormattedReferences
+    collections: collectionsPlusFormattedReferences,
+    url: url.pathname
   };
 
 }

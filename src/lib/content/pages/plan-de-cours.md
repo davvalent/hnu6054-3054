@@ -145,10 +145,4 @@ N’hésitez pas à consulter la page du Centre étudiant de soutien à la réus
 - Bob Ducharme. « Jumping Right In: Some Data and Some Queries. » Learning  SPARQL. Querying and Updating with SPARQL 1.1. 2e édition. O’Reilly, 2013
 - Matthew Lincoln. Using SPARQL to access Linked Open Data. The Programming Historian. 2015. https://doi.org/10.46430/phen0047 **(retiré)**
 
-## Bibliographie sommaire
-
-- Eero Hyvönen. *Publishing and Using Cultural Heritage Linked Data on the Semantic Web.* Synthesis Lectures on semantic web : Theory and technology. Morgan & Claypool publishers, 2012. ISBN 1608459985 https://doi.org/10.2200/S00452ED1V01Y201210WBE003
-- Murtha Baca (ed.). *Introduction to Metadata*. 3e édition. Getty, 2016. ISBN 978-0892368969 http://www.getty.edu/publications/intrometadata
-- Patricia Harpring. *Introduction to Controlled Vocabularies: Terminologies for Art, Architecture, and Other Cultural Works*. Getty, 2010. ISBN 978-1-60606-027-8 http://www.getty.edu/publications/virtuallibrary/160606018X.html
-- Seth Van Holland, Ruben Verborgh. *Linked Data for Libraries, Archives and Museums, How to clean, link and publish your metadata.* Facet publishing, 2014. ISBN 9781783300389
-- Dominic Oldman, Martin Doerr and Stefan Gradmann, ‘Zen and the Art  of Linked Data: New Strategies for a Semantic Web of Humanist *  Knowledge’, in *A New Companion to Digital Humanities*, edited by Susan Schreibman et al.
+<div class="pagebreak"></div>
