@@ -7,14 +7,13 @@ description: |
 date: "2024-06-10"
 print: true
 ---
-## Informations pratiques
 
-- Cours optionnel, 1 crédit
-- Horaire :
-  - lundi 10 juin : 9h30 à 11h30 | 12h30 à 15h30
-  - mercredi 12 juin : 9h30 à 11h30 | 12h30 à 15h30
-  - vendredi 14 juin : 9h30 à 11h30 | 12h30 à 15h30
-- Salle : C-3115, Pavillon Lionel-Groulx, UdeM
+<script>
+  import Abbr from '$lib/components/abbreviations.svelte';
+</script>
+
+## Informations
+
 - Enseignant : David Valentine
 - Disponibilités : sur rendez-vous
 - Courriel : david.valentine@umontreal.ca
