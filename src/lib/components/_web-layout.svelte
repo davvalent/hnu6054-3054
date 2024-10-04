@@ -45,8 +45,8 @@ afterUpdate (() => {
   console.log("DOM updated");
 });
 
-function foobar() {
-  console.log('LINK ACTIVATED');
+function checkLink() {
+  console.log('Print link activated');
   window.location.href = '?print'
 }
 </script>
@@ -84,7 +84,8 @@ function foobar() {
 
   {#if layoutData.print}
   <p>
-    <a href="?print" on:click={foobar}>Version imprimable</a> 
+    <!-- probably should use button instead -->
+    <a href="?print" on:click={checkLink}>Version imprimable</a> 
   </p>
   {/if}
 
