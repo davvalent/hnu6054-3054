@@ -3,12 +3,34 @@
   font-family:"Atkinson";
   src:
     local("Atkinson"),
-    url("/fonts/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2"),
+    url("/fonts/Atkinson-Hyperlegible-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family:"Atkinson Bold";
+  font-family:"Atkinson";
+  src:
+    local("Atkinson"),
+    url("/fonts/Atkinson-Hyperlegible-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+  font-family:"Atkinson";
   src:
     local("Atkinson Bold"),
-    url("/fonts/Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2"),
+    url("/fonts/Atkinson-Hyperlegible-Italic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+  font-family:"Atkinson";
+  src:
+    local("Atkinson Bold"),
+    url("/fonts/Atkinson-Hyperlegible-BoldItalic.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
 }
