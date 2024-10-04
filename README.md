@@ -8,6 +8,8 @@ Pour installation :
 - npm install
 - npm run dev -- --open
 
+http://localhost:5173
+
 Pour build :
 
 - git checkout deploy
@@ -16,8 +18,10 @@ Pour build :
 
 # Notes techniques
 
-Voir NOTES.md
+Voir /notes/NOTES.md
 
 ## Branches
 
-- deploy : build seulement sur la branche deploy, car je ne veux pas commiter les builds sur les flows qui se retrouvent dans la branche main; push sur deploy déclenche le déploiement
+- `deploy` :
+  - build seulement sur la branche `deploy`, car on ne veut pas commiter les builds sur les flows qui se retrouvent dans `main`
+  - push sur `deploy` déclenche le déploiement sur GH

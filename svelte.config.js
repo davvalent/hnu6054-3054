@@ -8,6 +8,7 @@ const config = {
 
   kit: {
     paths: {
+      // le base path est `/hnu6054-3054` pour la branche `deploy`
       base: dev ? '' : '/~david/hnu6054-svelte',
       relative: false
     },
