@@ -138,7 +138,13 @@ function checkLink() {
     /* font-weight: bold; */
     border: 2px solid;
   }
-  
+
+  main {
+    max-width: 50rem;
+    padding: 2ch;
+    margin: auto;
+  }
+
   section.description {
 	margin-top: 2rem;
 }
